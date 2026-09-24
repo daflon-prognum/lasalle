@@ -1,0 +1,2293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a351b03de21144385c9e246775a80597 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a351b03de21144385c9e246775a80597" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a351b03de21144385c9e246775a80597 = L.map(
+                "map_a351b03de21144385c9e246775a80597",
+                {
+                    center: [-22.736785025907697, -43.50738358758272],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f871e78447c9900f206f08e3f9a2125c = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f871e78447c9900f206f08e3f9a2125c.addTo(map_a351b03de21144385c9e246775a80597);
+        
+    
+            var marker_cluster_88c138d4d272d69c48c524a0ab4418cb = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_8137cd8fd78f8e7b9f41ced5e250b4f8 = L.marker(
+                [-22.714426310323375, -43.57138840919782],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_916babe6d3b851de62fe8e95da0cf64a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a73e64f6eb5b83fdf8ebb286f733d822 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8154368f3ba0ea6ac8018f93c6e8cd43 = $(`<div id="html_8154368f3ba0ea6ac8018f93c6e8cd43" style="width: 100.0%; height: 100.0%;"><b>Imóvel #1</b><br>Tipo: Casa<br>Cidade: Queimados<br>Valor: R$ 613.765,60</div>`)[0];
+                popup_a73e64f6eb5b83fdf8ebb286f733d822.setContent(html_8154368f3ba0ea6ac8018f93c6e8cd43);
+            
+        
+
+        marker_8137cd8fd78f8e7b9f41ced5e250b4f8.bindPopup(popup_a73e64f6eb5b83fdf8ebb286f733d822)
+        ;
+
+        
+    
+    
+            marker_8137cd8fd78f8e7b9f41ced5e250b4f8.bindTooltip(
+                `<div>
+                     Casa - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8137cd8fd78f8e7b9f41ced5e250b4f8.setIcon(icon_916babe6d3b851de62fe8e95da0cf64a);
+            
+    
+            var marker_d1512e7902d4a67651627a3aacf909c1 = L.marker(
+                [-22.73755359069016, -43.43988185026465],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_c7f4ff29cf9989fd060c1da7a8ae0aa1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2660e3db88b0048c26d46e741f2e0a6e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4c19f3596bae600d5cfc3c9b308dbc20 = $(`<div id="html_4c19f3596bae600d5cfc3c9b308dbc20" style="width: 100.0%; height: 100.0%;"><b>Imóvel #2</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 368.197,75</div>`)[0];
+                popup_2660e3db88b0048c26d46e741f2e0a6e.setContent(html_4c19f3596bae600d5cfc3c9b308dbc20);
+            
+        
+
+        marker_d1512e7902d4a67651627a3aacf909c1.bindPopup(popup_2660e3db88b0048c26d46e741f2e0a6e)
+        ;
+
+        
+    
+    
+            marker_d1512e7902d4a67651627a3aacf909c1.bindTooltip(
+                `<div>
+                     Terreno - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d1512e7902d4a67651627a3aacf909c1.setIcon(icon_c7f4ff29cf9989fd060c1da7a8ae0aa1);
+            
+    
+            var marker_c7848d7a4cfee276841444dd2711360e = L.marker(
+                [-22.73223452200459, -43.4707531961017],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_133e2afc756cfa8f3c1cdf4955984f22 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c11532b2a0eb50614201f804094f84d7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d5867259b0afdbbcae1e5be554bfa4fb = $(`<div id="html_d5867259b0afdbbcae1e5be554bfa4fb" style="width: 100.0%; height: 100.0%;"><b>Imóvel #3</b><br>Tipo: Apartamento<br>Cidade: Nova Iguaçu<br>Valor: R$ 514.047,61</div>`)[0];
+                popup_c11532b2a0eb50614201f804094f84d7.setContent(html_d5867259b0afdbbcae1e5be554bfa4fb);
+            
+        
+
+        marker_c7848d7a4cfee276841444dd2711360e.bindPopup(popup_c11532b2a0eb50614201f804094f84d7)
+        ;
+
+        
+    
+    
+            marker_c7848d7a4cfee276841444dd2711360e.bindTooltip(
+                `<div>
+                     Apartamento - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c7848d7a4cfee276841444dd2711360e.setIcon(icon_133e2afc756cfa8f3c1cdf4955984f22);
+            
+    
+            var marker_69e9c26392bf1281cd569510fba587bc = L.marker(
+                [-22.76691979150169, -43.47880888937601],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_7ec69cafeeb61ea3c93d43bd18a1546d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cbfb92c699b6a7fd838e2c0df5b637c2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ccdc7a5bbbf4ee6111b2a04b077ae028 = $(`<div id="html_ccdc7a5bbbf4ee6111b2a04b077ae028" style="width: 100.0%; height: 100.0%;"><b>Imóvel #4</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 532.697,20</div>`)[0];
+                popup_cbfb92c699b6a7fd838e2c0df5b637c2.setContent(html_ccdc7a5bbbf4ee6111b2a04b077ae028);
+            
+        
+
+        marker_69e9c26392bf1281cd569510fba587bc.bindPopup(popup_cbfb92c699b6a7fd838e2c0df5b637c2)
+        ;
+
+        
+    
+    
+            marker_69e9c26392bf1281cd569510fba587bc.bindTooltip(
+                `<div>
+                     Terreno - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_69e9c26392bf1281cd569510fba587bc.setIcon(icon_7ec69cafeeb61ea3c93d43bd18a1546d);
+            
+    
+            var marker_309885905d0b22e4f67fdc816ddbea8d = L.marker(
+                [-22.731597923018892, -43.57336899433781],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_76a881d11a842e6877f0143386029f51 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8145b34c0ebd574393bd9100152ed511 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e268a48ed74ca31f61e58ddbaf5d87f2 = $(`<div id="html_e268a48ed74ca31f61e58ddbaf5d87f2" style="width: 100.0%; height: 100.0%;"><b>Imóvel #5</b><br>Tipo: Casa<br>Cidade: Queimados<br>Valor: R$ 279.398,12</div>`)[0];
+                popup_8145b34c0ebd574393bd9100152ed511.setContent(html_e268a48ed74ca31f61e58ddbaf5d87f2);
+            
+        
+
+        marker_309885905d0b22e4f67fdc816ddbea8d.bindPopup(popup_8145b34c0ebd574393bd9100152ed511)
+        ;
+
+        
+    
+    
+            marker_309885905d0b22e4f67fdc816ddbea8d.bindTooltip(
+                `<div>
+                     Casa - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_309885905d0b22e4f67fdc816ddbea8d.setIcon(icon_76a881d11a842e6877f0143386029f51);
+            
+    
+            var marker_4428e5ba81e3529fcf5589c085c22eaa = L.marker(
+                [-22.726882593498324, -43.55136428227247],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_7b0a2cf982da201f54ce8b5e81da56aa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ed6a9558ff8e0bb6e27cd6e6dc9d32b1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8c7a380879c7da9ef8585b1367e90e55 = $(`<div id="html_8c7a380879c7da9ef8585b1367e90e55" style="width: 100.0%; height: 100.0%;"><b>Imóvel #6</b><br>Tipo: Casa<br>Cidade: Queimados<br>Valor: R$ 828.709,24</div>`)[0];
+                popup_ed6a9558ff8e0bb6e27cd6e6dc9d32b1.setContent(html_8c7a380879c7da9ef8585b1367e90e55);
+            
+        
+
+        marker_4428e5ba81e3529fcf5589c085c22eaa.bindPopup(popup_ed6a9558ff8e0bb6e27cd6e6dc9d32b1)
+        ;
+
+        
+    
+    
+            marker_4428e5ba81e3529fcf5589c085c22eaa.bindTooltip(
+                `<div>
+                     Casa - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4428e5ba81e3529fcf5589c085c22eaa.setIcon(icon_7b0a2cf982da201f54ce8b5e81da56aa);
+            
+    
+            var marker_be2015d74ae4014bfb073d1bbf95891a = L.marker(
+                [-22.718915688454953, -43.54789742552631],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_614554870ede9c1d4c478f5e4b8fb690 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f7a12995c0425413fd347d5696daac3d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_57f9aeb256a8dfc4bef7be4b2125b18c = $(`<div id="html_57f9aeb256a8dfc4bef7be4b2125b18c" style="width: 100.0%; height: 100.0%;"><b>Imóvel #7</b><br>Tipo: Apartamento<br>Cidade: Queimados<br>Valor: R$ 692.592,98</div>`)[0];
+                popup_f7a12995c0425413fd347d5696daac3d.setContent(html_57f9aeb256a8dfc4bef7be4b2125b18c);
+            
+        
+
+        marker_be2015d74ae4014bfb073d1bbf95891a.bindPopup(popup_f7a12995c0425413fd347d5696daac3d)
+        ;
+
+        
+    
+    
+            marker_be2015d74ae4014bfb073d1bbf95891a.bindTooltip(
+                `<div>
+                     Apartamento - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_be2015d74ae4014bfb073d1bbf95891a.setIcon(icon_614554870ede9c1d4c478f5e4b8fb690);
+            
+    
+            var marker_964c2adea82212ef9d63958d790437ef = L.marker(
+                [-22.73691911404465, -43.48900473026433],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_f0d8756b126c9b41ceeb4a5b7769af45 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cc1bd9937dda4492db4c66d84e816aaf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b362dbdf696167649472194a8b475792 = $(`<div id="html_b362dbdf696167649472194a8b475792" style="width: 100.0%; height: 100.0%;"><b>Imóvel #8</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 807.649,26</div>`)[0];
+                popup_cc1bd9937dda4492db4c66d84e816aaf.setContent(html_b362dbdf696167649472194a8b475792);
+            
+        
+
+        marker_964c2adea82212ef9d63958d790437ef.bindPopup(popup_cc1bd9937dda4492db4c66d84e816aaf)
+        ;
+
+        
+    
+    
+            marker_964c2adea82212ef9d63958d790437ef.bindTooltip(
+                `<div>
+                     Terreno - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_964c2adea82212ef9d63958d790437ef.setIcon(icon_f0d8756b126c9b41ceeb4a5b7769af45);
+            
+    
+            var marker_ce7806d7f5023dfed1a6fdd72e28311a = L.marker(
+                [-22.73435616500462, -43.45927441650204],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_7adfe652ccae348b5cd6b99a6cccfc38 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d3a7758a6348969d5aa103a362973d9a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9b088acdc0caeb56a0f3b8ad25f0bf4e = $(`<div id="html_9b088acdc0caeb56a0f3b8ad25f0bf4e" style="width: 100.0%; height: 100.0%;"><b>Imóvel #9</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 776.379,15</div>`)[0];
+                popup_d3a7758a6348969d5aa103a362973d9a.setContent(html_9b088acdc0caeb56a0f3b8ad25f0bf4e);
+            
+        
+
+        marker_ce7806d7f5023dfed1a6fdd72e28311a.bindPopup(popup_d3a7758a6348969d5aa103a362973d9a)
+        ;
+
+        
+    
+    
+            marker_ce7806d7f5023dfed1a6fdd72e28311a.bindTooltip(
+                `<div>
+                     Terreno - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ce7806d7f5023dfed1a6fdd72e28311a.setIcon(icon_7adfe652ccae348b5cd6b99a6cccfc38);
+            
+    
+            var marker_3bd1185bc43a2bb92aa86caef1f2dd47 = L.marker(
+                [-22.785582872168128, -43.476410253488126],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_cd1f4d30f1ad524f4d721deb3cb4ae3b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_928cdc02f3488cafee4daecf56de0573 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4be317938c9bc06cd3b96f5c83b05a25 = $(`<div id="html_4be317938c9bc06cd3b96f5c83b05a25" style="width: 100.0%; height: 100.0%;"><b>Imóvel #10</b><br>Tipo: Apartamento<br>Cidade: Nova Iguaçu<br>Valor: R$ 568.529,99</div>`)[0];
+                popup_928cdc02f3488cafee4daecf56de0573.setContent(html_4be317938c9bc06cd3b96f5c83b05a25);
+            
+        
+
+        marker_3bd1185bc43a2bb92aa86caef1f2dd47.bindPopup(popup_928cdc02f3488cafee4daecf56de0573)
+        ;
+
+        
+    
+    
+            marker_3bd1185bc43a2bb92aa86caef1f2dd47.bindTooltip(
+                `<div>
+                     Apartamento - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3bd1185bc43a2bb92aa86caef1f2dd47.setIcon(icon_cd1f4d30f1ad524f4d721deb3cb4ae3b);
+            
+    
+            var marker_158a4ce1cb107b2e73eab3374609d7f0 = L.marker(
+                [-22.715570107896898, -43.549193088383625],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_bbe4b587f7bea18c24602a2a542065d6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f26d49467b19bc8fca14db5f41f1005b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6e2a77b9b407016c94f97bad90e29869 = $(`<div id="html_6e2a77b9b407016c94f97bad90e29869" style="width: 100.0%; height: 100.0%;"><b>Imóvel #11</b><br>Tipo: Terreno<br>Cidade: Queimados<br>Valor: R$ 795.311,96</div>`)[0];
+                popup_f26d49467b19bc8fca14db5f41f1005b.setContent(html_6e2a77b9b407016c94f97bad90e29869);
+            
+        
+
+        marker_158a4ce1cb107b2e73eab3374609d7f0.bindPopup(popup_f26d49467b19bc8fca14db5f41f1005b)
+        ;
+
+        
+    
+    
+            marker_158a4ce1cb107b2e73eab3374609d7f0.bindTooltip(
+                `<div>
+                     Terreno - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_158a4ce1cb107b2e73eab3374609d7f0.setIcon(icon_bbe4b587f7bea18c24602a2a542065d6);
+            
+    
+            var marker_3e2b1fd87463f59b06ba456f86e9844c = L.marker(
+                [-22.760955339811073, -43.4795380142597],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_5c71cf443a6e9dcef60fbbf1178149eb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bc2d0cf667f68c20114cb05937606c27 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_31b726944c473588c6f196e085341219 = $(`<div id="html_31b726944c473588c6f196e085341219" style="width: 100.0%; height: 100.0%;"><b>Imóvel #12</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 211.944,75</div>`)[0];
+                popup_bc2d0cf667f68c20114cb05937606c27.setContent(html_31b726944c473588c6f196e085341219);
+            
+        
+
+        marker_3e2b1fd87463f59b06ba456f86e9844c.bindPopup(popup_bc2d0cf667f68c20114cb05937606c27)
+        ;
+
+        
+    
+    
+            marker_3e2b1fd87463f59b06ba456f86e9844c.bindTooltip(
+                `<div>
+                     Terreno - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3e2b1fd87463f59b06ba456f86e9844c.setIcon(icon_5c71cf443a6e9dcef60fbbf1178149eb);
+            
+    
+            var marker_46da01d65266396d98ae1da54773fb99 = L.marker(
+                [-22.772673531371755, -43.448543735713855],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_0b3564d7d9ed9e299f3f2ac5ead6c87a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b4d494424094f40f23d17601be1e03bf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_971e186e124adb4b6a4bca731a4051a5 = $(`<div id="html_971e186e124adb4b6a4bca731a4051a5" style="width: 100.0%; height: 100.0%;"><b>Imóvel #13</b><br>Tipo: Casa<br>Cidade: Nova Iguaçu<br>Valor: R$ 287.188,00</div>`)[0];
+                popup_b4d494424094f40f23d17601be1e03bf.setContent(html_971e186e124adb4b6a4bca731a4051a5);
+            
+        
+
+        marker_46da01d65266396d98ae1da54773fb99.bindPopup(popup_b4d494424094f40f23d17601be1e03bf)
+        ;
+
+        
+    
+    
+            marker_46da01d65266396d98ae1da54773fb99.bindTooltip(
+                `<div>
+                     Casa - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_46da01d65266396d98ae1da54773fb99.setIcon(icon_0b3564d7d9ed9e299f3f2ac5ead6c87a);
+            
+    
+            var marker_acbdb6ac32c5538524b115cc8096d48f = L.marker(
+                [-22.731205385306655, -43.55953058614798],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_249de5a6467a7aec86f0ce5a3b609e01 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_de26afe8aed1725921a6c4e9e28564b2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b41c2edbf7e0c5e25b52217aff5a6069 = $(`<div id="html_b41c2edbf7e0c5e25b52217aff5a6069" style="width: 100.0%; height: 100.0%;"><b>Imóvel #14</b><br>Tipo: Terreno<br>Cidade: Queimados<br>Valor: R$ 181.659,10</div>`)[0];
+                popup_de26afe8aed1725921a6c4e9e28564b2.setContent(html_b41c2edbf7e0c5e25b52217aff5a6069);
+            
+        
+
+        marker_acbdb6ac32c5538524b115cc8096d48f.bindPopup(popup_de26afe8aed1725921a6c4e9e28564b2)
+        ;
+
+        
+    
+    
+            marker_acbdb6ac32c5538524b115cc8096d48f.bindTooltip(
+                `<div>
+                     Terreno - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_acbdb6ac32c5538524b115cc8096d48f.setIcon(icon_249de5a6467a7aec86f0ce5a3b609e01);
+            
+    
+            var marker_4df228b8925cda8389e716c533df64cf = L.marker(
+                [-22.722495393143856, -43.53753080045053],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_6c03dcb0967b79163d85211fab15fd99 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_80df947b587b698aef7c4ab8f200654f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0e96b3d83bb9f6d6637b383ebf2a9e93 = $(`<div id="html_0e96b3d83bb9f6d6637b383ebf2a9e93" style="width: 100.0%; height: 100.0%;"><b>Imóvel #15</b><br>Tipo: Terreno<br>Cidade: Queimados<br>Valor: R$ 377.731,23</div>`)[0];
+                popup_80df947b587b698aef7c4ab8f200654f.setContent(html_0e96b3d83bb9f6d6637b383ebf2a9e93);
+            
+        
+
+        marker_4df228b8925cda8389e716c533df64cf.bindPopup(popup_80df947b587b698aef7c4ab8f200654f)
+        ;
+
+        
+    
+    
+            marker_4df228b8925cda8389e716c533df64cf.bindTooltip(
+                `<div>
+                     Terreno - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4df228b8925cda8389e716c533df64cf.setIcon(icon_6c03dcb0967b79163d85211fab15fd99);
+            
+    
+            var marker_5b55d5b6739443eab93d7b0cc322a83c = L.marker(
+                [-22.6982836118435, -43.56949916223416],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_06188dfb8ffe3c9a5e70f381ba35c4b6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d6ad8ca62f36cf786f68fc3e29539bc7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b6217b3aef6bb4679e24bcb1c0f82f27 = $(`<div id="html_b6217b3aef6bb4679e24bcb1c0f82f27" style="width: 100.0%; height: 100.0%;"><b>Imóvel #16</b><br>Tipo: Apartamento<br>Cidade: Queimados<br>Valor: R$ 422.074,10</div>`)[0];
+                popup_d6ad8ca62f36cf786f68fc3e29539bc7.setContent(html_b6217b3aef6bb4679e24bcb1c0f82f27);
+            
+        
+
+        marker_5b55d5b6739443eab93d7b0cc322a83c.bindPopup(popup_d6ad8ca62f36cf786f68fc3e29539bc7)
+        ;
+
+        
+    
+    
+            marker_5b55d5b6739443eab93d7b0cc322a83c.bindTooltip(
+                `<div>
+                     Apartamento - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5b55d5b6739443eab93d7b0cc322a83c.setIcon(icon_06188dfb8ffe3c9a5e70f381ba35c4b6);
+            
+    
+            var marker_3056faab595a760800ecfbcf0e240247 = L.marker(
+                [-22.72307188271917, -43.56135734595799],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_03348234a9c7c4ca96d1c16c6170d613 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d195d200a487a2aa5bf43017ffb6516a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c88d6fbdc320caaded283f83c125993d = $(`<div id="html_c88d6fbdc320caaded283f83c125993d" style="width: 100.0%; height: 100.0%;"><b>Imóvel #17</b><br>Tipo: Apartamento<br>Cidade: Queimados<br>Valor: R$ 339.944,32</div>`)[0];
+                popup_d195d200a487a2aa5bf43017ffb6516a.setContent(html_c88d6fbdc320caaded283f83c125993d);
+            
+        
+
+        marker_3056faab595a760800ecfbcf0e240247.bindPopup(popup_d195d200a487a2aa5bf43017ffb6516a)
+        ;
+
+        
+    
+    
+            marker_3056faab595a760800ecfbcf0e240247.bindTooltip(
+                `<div>
+                     Apartamento - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3056faab595a760800ecfbcf0e240247.setIcon(icon_03348234a9c7c4ca96d1c16c6170d613);
+            
+    
+            var marker_0f9c2ee251b211d379db7d6d3b18b808 = L.marker(
+                [-22.754872562695397, -43.48319158872557],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_0f08e8e989eef420078ea457553bb74a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_af804099add57d3545edcaa4ef77b0c4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e5a0351299553b18ef76835da23680e9 = $(`<div id="html_e5a0351299553b18ef76835da23680e9" style="width: 100.0%; height: 100.0%;"><b>Imóvel #18</b><br>Tipo: Casa<br>Cidade: Nova Iguaçu<br>Valor: R$ 730.116,26</div>`)[0];
+                popup_af804099add57d3545edcaa4ef77b0c4.setContent(html_e5a0351299553b18ef76835da23680e9);
+            
+        
+
+        marker_0f9c2ee251b211d379db7d6d3b18b808.bindPopup(popup_af804099add57d3545edcaa4ef77b0c4)
+        ;
+
+        
+    
+    
+            marker_0f9c2ee251b211d379db7d6d3b18b808.bindTooltip(
+                `<div>
+                     Casa - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0f9c2ee251b211d379db7d6d3b18b808.setIcon(icon_0f08e8e989eef420078ea457553bb74a);
+            
+    
+            var marker_80e9eacc91dff181f92afc3447967d44 = L.marker(
+                [-22.743818862466288, -43.434518382903285],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_e26c4d4cfa3242bdab021b17a08e831e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9006862e6d35e1feec637534f3688be0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_92f060ae0ef30dc6ef2c3a0efe6a8d9c = $(`<div id="html_92f060ae0ef30dc6ef2c3a0efe6a8d9c" style="width: 100.0%; height: 100.0%;"><b>Imóvel #19</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 399.727,33</div>`)[0];
+                popup_9006862e6d35e1feec637534f3688be0.setContent(html_92f060ae0ef30dc6ef2c3a0efe6a8d9c);
+            
+        
+
+        marker_80e9eacc91dff181f92afc3447967d44.bindPopup(popup_9006862e6d35e1feec637534f3688be0)
+        ;
+
+        
+    
+    
+            marker_80e9eacc91dff181f92afc3447967d44.bindTooltip(
+                `<div>
+                     Terreno - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_80e9eacc91dff181f92afc3447967d44.setIcon(icon_e26c4d4cfa3242bdab021b17a08e831e);
+            
+    
+            var marker_6bc6549172c0c9fcc803d7b04d430ced = L.marker(
+                [-22.721454815904828, -43.53990642586476],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_3767128e691c05a7c16e5fdfe74e154f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dce742b7c0c2a42a2108c5a57b8f2f9b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8a4875a02f4f698eca0f4063110ce2fa = $(`<div id="html_8a4875a02f4f698eca0f4063110ce2fa" style="width: 100.0%; height: 100.0%;"><b>Imóvel #20</b><br>Tipo: Terreno<br>Cidade: Queimados<br>Valor: R$ 346.654,16</div>`)[0];
+                popup_dce742b7c0c2a42a2108c5a57b8f2f9b.setContent(html_8a4875a02f4f698eca0f4063110ce2fa);
+            
+        
+
+        marker_6bc6549172c0c9fcc803d7b04d430ced.bindPopup(popup_dce742b7c0c2a42a2108c5a57b8f2f9b)
+        ;
+
+        
+    
+    
+            marker_6bc6549172c0c9fcc803d7b04d430ced.bindTooltip(
+                `<div>
+                     Terreno - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6bc6549172c0c9fcc803d7b04d430ced.setIcon(icon_3767128e691c05a7c16e5fdfe74e154f);
+            
+    
+            var marker_f1cce52a785546653fa2d0dd240e7601 = L.marker(
+                [-22.727693075036743, -43.47452350233709],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_9b51c4d7963a625d27c0c9b8a4c5e5ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_55eee97d77e57717d0cc9a7ef7d3c1bb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_57ccedeeba67af70be1566467db9fbba = $(`<div id="html_57ccedeeba67af70be1566467db9fbba" style="width: 100.0%; height: 100.0%;"><b>Imóvel #21</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 529.887,26</div>`)[0];
+                popup_55eee97d77e57717d0cc9a7ef7d3c1bb.setContent(html_57ccedeeba67af70be1566467db9fbba);
+            
+        
+
+        marker_f1cce52a785546653fa2d0dd240e7601.bindPopup(popup_55eee97d77e57717d0cc9a7ef7d3c1bb)
+        ;
+
+        
+    
+    
+            marker_f1cce52a785546653fa2d0dd240e7601.bindTooltip(
+                `<div>
+                     Terreno - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f1cce52a785546653fa2d0dd240e7601.setIcon(icon_9b51c4d7963a625d27c0c9b8a4c5e5ce);
+            
+    
+            var marker_251a48c250380d4d3b061016b4cdd31e = L.marker(
+                [-22.69750210820232, -43.54860063815863],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_9c2878258df78b01080d121694955234 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f984f27aeb68caeff625dc345448d964 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ff171d5dc883c7712e79d9ce6e237d70 = $(`<div id="html_ff171d5dc883c7712e79d9ce6e237d70" style="width: 100.0%; height: 100.0%;"><b>Imóvel #22</b><br>Tipo: Casa<br>Cidade: Queimados<br>Valor: R$ 248.646,96</div>`)[0];
+                popup_f984f27aeb68caeff625dc345448d964.setContent(html_ff171d5dc883c7712e79d9ce6e237d70);
+            
+        
+
+        marker_251a48c250380d4d3b061016b4cdd31e.bindPopup(popup_f984f27aeb68caeff625dc345448d964)
+        ;
+
+        
+    
+    
+            marker_251a48c250380d4d3b061016b4cdd31e.bindTooltip(
+                `<div>
+                     Casa - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_251a48c250380d4d3b061016b4cdd31e.setIcon(icon_9c2878258df78b01080d121694955234);
+            
+    
+            var marker_ed40de9b5306e4e36654975e1e389a32 = L.marker(
+                [-22.725928708166986, -43.54231111199195],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_0f8635099abcf51bafa1e4e5d1f4696b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c78a3a569932c9bc0fdc6ef123d0bcd5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ce2e359613fb936373bde043c4fdf4e0 = $(`<div id="html_ce2e359613fb936373bde043c4fdf4e0" style="width: 100.0%; height: 100.0%;"><b>Imóvel #23</b><br>Tipo: Casa<br>Cidade: Queimados<br>Valor: R$ 711.537,89</div>`)[0];
+                popup_c78a3a569932c9bc0fdc6ef123d0bcd5.setContent(html_ce2e359613fb936373bde043c4fdf4e0);
+            
+        
+
+        marker_ed40de9b5306e4e36654975e1e389a32.bindPopup(popup_c78a3a569932c9bc0fdc6ef123d0bcd5)
+        ;
+
+        
+    
+    
+            marker_ed40de9b5306e4e36654975e1e389a32.bindTooltip(
+                `<div>
+                     Casa - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ed40de9b5306e4e36654975e1e389a32.setIcon(icon_0f8635099abcf51bafa1e4e5d1f4696b);
+            
+    
+            var marker_65257237ee32fea2c4e5dd0d00b5ba65 = L.marker(
+                [-22.716110059764304, -43.552791967536024],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_8f47ef43e652d41435d6be0d1bdf8d9c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e946fbacf6fcb6ce19a5a6ae2e0910a5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dc00bfb0ca650666bad6bf6af672249d = $(`<div id="html_dc00bfb0ca650666bad6bf6af672249d" style="width: 100.0%; height: 100.0%;"><b>Imóvel #24</b><br>Tipo: Apartamento<br>Cidade: Queimados<br>Valor: R$ 202.185,45</div>`)[0];
+                popup_e946fbacf6fcb6ce19a5a6ae2e0910a5.setContent(html_dc00bfb0ca650666bad6bf6af672249d);
+            
+        
+
+        marker_65257237ee32fea2c4e5dd0d00b5ba65.bindPopup(popup_e946fbacf6fcb6ce19a5a6ae2e0910a5)
+        ;
+
+        
+    
+    
+            marker_65257237ee32fea2c4e5dd0d00b5ba65.bindTooltip(
+                `<div>
+                     Apartamento - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_65257237ee32fea2c4e5dd0d00b5ba65.setIcon(icon_8f47ef43e652d41435d6be0d1bdf8d9c);
+            
+    
+            var marker_9f5898032fc4a5ffc155f45f4a8065fe = L.marker(
+                [-22.767947301410995, -43.45822096529864],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_e024c5b15f431fe4b73184f646488918 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_43972d45081986b5b754c6dd9fc42feb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1af89639ffb83d8fa23854865ad3c673 = $(`<div id="html_1af89639ffb83d8fa23854865ad3c673" style="width: 100.0%; height: 100.0%;"><b>Imóvel #25</b><br>Tipo: Casa<br>Cidade: Nova Iguaçu<br>Valor: R$ 840.820,86</div>`)[0];
+                popup_43972d45081986b5b754c6dd9fc42feb.setContent(html_1af89639ffb83d8fa23854865ad3c673);
+            
+        
+
+        marker_9f5898032fc4a5ffc155f45f4a8065fe.bindPopup(popup_43972d45081986b5b754c6dd9fc42feb)
+        ;
+
+        
+    
+    
+            marker_9f5898032fc4a5ffc155f45f4a8065fe.bindTooltip(
+                `<div>
+                     Casa - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9f5898032fc4a5ffc155f45f4a8065fe.setIcon(icon_e024c5b15f431fe4b73184f646488918);
+            
+    
+            var marker_4a0d8abfdafe7d6c07edcc2d996688a5 = L.marker(
+                [-22.768909570337353, -43.47548886254597],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_bd7c0b80cca4545fbd16cfee00c5856a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_45ab321b748125747e4d1a39d6ba3590 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d31539010ddb230adb3ef094690918c4 = $(`<div id="html_d31539010ddb230adb3ef094690918c4" style="width: 100.0%; height: 100.0%;"><b>Imóvel #26</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 690.571,34</div>`)[0];
+                popup_45ab321b748125747e4d1a39d6ba3590.setContent(html_d31539010ddb230adb3ef094690918c4);
+            
+        
+
+        marker_4a0d8abfdafe7d6c07edcc2d996688a5.bindPopup(popup_45ab321b748125747e4d1a39d6ba3590)
+        ;
+
+        
+    
+    
+            marker_4a0d8abfdafe7d6c07edcc2d996688a5.bindTooltip(
+                `<div>
+                     Terreno - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4a0d8abfdafe7d6c07edcc2d996688a5.setIcon(icon_bd7c0b80cca4545fbd16cfee00c5856a);
+            
+    
+            var marker_2ef8e0acf43328a3f70f3c34a312e2c2 = L.marker(
+                [-22.73452452210582, -43.57127588928776],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_5100b5cfd570c562695615eab9a2aa4f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_14703f26d6c96ebe1d4c01b48d383698 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_372329aed0cfcdf230984f470273ecfc = $(`<div id="html_372329aed0cfcdf230984f470273ecfc" style="width: 100.0%; height: 100.0%;"><b>Imóvel #27</b><br>Tipo: Terreno<br>Cidade: Queimados<br>Valor: R$ 289.100,98</div>`)[0];
+                popup_14703f26d6c96ebe1d4c01b48d383698.setContent(html_372329aed0cfcdf230984f470273ecfc);
+            
+        
+
+        marker_2ef8e0acf43328a3f70f3c34a312e2c2.bindPopup(popup_14703f26d6c96ebe1d4c01b48d383698)
+        ;
+
+        
+    
+    
+            marker_2ef8e0acf43328a3f70f3c34a312e2c2.bindTooltip(
+                `<div>
+                     Terreno - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2ef8e0acf43328a3f70f3c34a312e2c2.setIcon(icon_5100b5cfd570c562695615eab9a2aa4f);
+            
+    
+            var marker_14060eb5d3c0bd95cb97b52582e11fa4 = L.marker(
+                [-22.749426139961205, -43.4361670545228],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_7cdf5dc58d1f22cc86f73b16c794f997 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_75c39dda7421aaf53ce63681d6ccaf75 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_531dbb9f9fd7c83fd1b867febcc26ed9 = $(`<div id="html_531dbb9f9fd7c83fd1b867febcc26ed9" style="width: 100.0%; height: 100.0%;"><b>Imóvel #28</b><br>Tipo: Casa<br>Cidade: Nova Iguaçu<br>Valor: R$ 153.865,48</div>`)[0];
+                popup_75c39dda7421aaf53ce63681d6ccaf75.setContent(html_531dbb9f9fd7c83fd1b867febcc26ed9);
+            
+        
+
+        marker_14060eb5d3c0bd95cb97b52582e11fa4.bindPopup(popup_75c39dda7421aaf53ce63681d6ccaf75)
+        ;
+
+        
+    
+    
+            marker_14060eb5d3c0bd95cb97b52582e11fa4.bindTooltip(
+                `<div>
+                     Casa - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_14060eb5d3c0bd95cb97b52582e11fa4.setIcon(icon_7cdf5dc58d1f22cc86f73b16c794f997);
+            
+    
+            var marker_a3dfbb4d7f7a559efe8f738447cd734e = L.marker(
+                [-22.75583925860627, -43.4359749165702],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_1ead216ac626554119c7f5ee81828e38 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9a66501e552f1e581c802d714f5116e4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c06de162bfc2e61a9322358788f51df3 = $(`<div id="html_c06de162bfc2e61a9322358788f51df3" style="width: 100.0%; height: 100.0%;"><b>Imóvel #29</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 720.823,00</div>`)[0];
+                popup_9a66501e552f1e581c802d714f5116e4.setContent(html_c06de162bfc2e61a9322358788f51df3);
+            
+        
+
+        marker_a3dfbb4d7f7a559efe8f738447cd734e.bindPopup(popup_9a66501e552f1e581c802d714f5116e4)
+        ;
+
+        
+    
+    
+            marker_a3dfbb4d7f7a559efe8f738447cd734e.bindTooltip(
+                `<div>
+                     Terreno - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a3dfbb4d7f7a559efe8f738447cd734e.setIcon(icon_1ead216ac626554119c7f5ee81828e38);
+            
+    
+            var marker_4c3ed3d46f04d625cfc52b07d05b8a55 = L.marker(
+                [-22.733940849950002, -43.54967594170907],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_0c89060bd37fe8aebea6a2f1bb349c4b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_15facbb6114e43e177fdbc43057a546a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_155c5a0708e2bcec8ea0f0cce3d872fb = $(`<div id="html_155c5a0708e2bcec8ea0f0cce3d872fb" style="width: 100.0%; height: 100.0%;"><b>Imóvel #30</b><br>Tipo: Terreno<br>Cidade: Queimados<br>Valor: R$ 644.800,14</div>`)[0];
+                popup_15facbb6114e43e177fdbc43057a546a.setContent(html_155c5a0708e2bcec8ea0f0cce3d872fb);
+            
+        
+
+        marker_4c3ed3d46f04d625cfc52b07d05b8a55.bindPopup(popup_15facbb6114e43e177fdbc43057a546a)
+        ;
+
+        
+    
+    
+            marker_4c3ed3d46f04d625cfc52b07d05b8a55.bindTooltip(
+                `<div>
+                     Terreno - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4c3ed3d46f04d625cfc52b07d05b8a55.setIcon(icon_0c89060bd37fe8aebea6a2f1bb349c4b);
+            
+    
+            var marker_5dc4066b406573be8910298e7bf92606 = L.marker(
+                [-22.769281212145803, -43.46965821253708],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_a5f91ca191334204ca2b4fdef39865b5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e9327b233081640a129851ca9162c89e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c6c05954d7e48e6038501a7a5189d91e = $(`<div id="html_c6c05954d7e48e6038501a7a5189d91e" style="width: 100.0%; height: 100.0%;"><b>Imóvel #31</b><br>Tipo: Casa<br>Cidade: Nova Iguaçu<br>Valor: R$ 660.305,02</div>`)[0];
+                popup_e9327b233081640a129851ca9162c89e.setContent(html_c6c05954d7e48e6038501a7a5189d91e);
+            
+        
+
+        marker_5dc4066b406573be8910298e7bf92606.bindPopup(popup_e9327b233081640a129851ca9162c89e)
+        ;
+
+        
+    
+    
+            marker_5dc4066b406573be8910298e7bf92606.bindTooltip(
+                `<div>
+                     Casa - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5dc4066b406573be8910298e7bf92606.setIcon(icon_a5f91ca191334204ca2b4fdef39865b5);
+            
+    
+            var marker_81d519a94485c664901e4be7bafc83e2 = L.marker(
+                [-22.699669364561334, -43.561031617015495],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_5edbb2ee5895011576324be77f3e4df4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7be29d3dce9e602205ac8204f6b6be7d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_688467e2a9133ec6755bd0864fc6be6c = $(`<div id="html_688467e2a9133ec6755bd0864fc6be6c" style="width: 100.0%; height: 100.0%;"><b>Imóvel #32</b><br>Tipo: Casa<br>Cidade: Queimados<br>Valor: R$ 689.889,24</div>`)[0];
+                popup_7be29d3dce9e602205ac8204f6b6be7d.setContent(html_688467e2a9133ec6755bd0864fc6be6c);
+            
+        
+
+        marker_81d519a94485c664901e4be7bafc83e2.bindPopup(popup_7be29d3dce9e602205ac8204f6b6be7d)
+        ;
+
+        
+    
+    
+            marker_81d519a94485c664901e4be7bafc83e2.bindTooltip(
+                `<div>
+                     Casa - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_81d519a94485c664901e4be7bafc83e2.setIcon(icon_5edbb2ee5895011576324be77f3e4df4);
+            
+    
+            var marker_6d53b0bcb254344f3db71c76901106af = L.marker(
+                [-22.72641752437332, -43.54596177284519],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_0a97efec822d034fcaf044fa690aad7d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8beefe5c6257550ff0403ed06a460447 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6b6f00e72aebb9fb07fad7e90e650c77 = $(`<div id="html_6b6f00e72aebb9fb07fad7e90e650c77" style="width: 100.0%; height: 100.0%;"><b>Imóvel #33</b><br>Tipo: Terreno<br>Cidade: Queimados<br>Valor: R$ 201.831,26</div>`)[0];
+                popup_8beefe5c6257550ff0403ed06a460447.setContent(html_6b6f00e72aebb9fb07fad7e90e650c77);
+            
+        
+
+        marker_6d53b0bcb254344f3db71c76901106af.bindPopup(popup_8beefe5c6257550ff0403ed06a460447)
+        ;
+
+        
+    
+    
+            marker_6d53b0bcb254344f3db71c76901106af.bindTooltip(
+                `<div>
+                     Terreno - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6d53b0bcb254344f3db71c76901106af.setIcon(icon_0a97efec822d034fcaf044fa690aad7d);
+            
+    
+            var marker_222b7c93aa738da0cc5b70acc923c5b3 = L.marker(
+                [-22.777306307674525, -43.43617338440285],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_6036ab29f34045ac94252586e1344b7e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1068c5eca1fa80192b74868348af7496 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8d0f22d54314d5d0943f66af494b760c = $(`<div id="html_8d0f22d54314d5d0943f66af494b760c" style="width: 100.0%; height: 100.0%;"><b>Imóvel #34</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 400.926,01</div>`)[0];
+                popup_1068c5eca1fa80192b74868348af7496.setContent(html_8d0f22d54314d5d0943f66af494b760c);
+            
+        
+
+        marker_222b7c93aa738da0cc5b70acc923c5b3.bindPopup(popup_1068c5eca1fa80192b74868348af7496)
+        ;
+
+        
+    
+    
+            marker_222b7c93aa738da0cc5b70acc923c5b3.bindTooltip(
+                `<div>
+                     Terreno - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_222b7c93aa738da0cc5b70acc923c5b3.setIcon(icon_6036ab29f34045ac94252586e1344b7e);
+            
+    
+            var marker_135e9929dfcf63d698a40f7f514a8ef3 = L.marker(
+                [-22.756632834383346, -43.436774814544094],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_c517761cc97800b8bb0f955b3c9cb610 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2f55db32f9b17dd083bc3a16bf1b51bf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_502e5f1f83ed7d1fad92bbb07bdd23a0 = $(`<div id="html_502e5f1f83ed7d1fad92bbb07bdd23a0" style="width: 100.0%; height: 100.0%;"><b>Imóvel #35</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 231.108,34</div>`)[0];
+                popup_2f55db32f9b17dd083bc3a16bf1b51bf.setContent(html_502e5f1f83ed7d1fad92bbb07bdd23a0);
+            
+        
+
+        marker_135e9929dfcf63d698a40f7f514a8ef3.bindPopup(popup_2f55db32f9b17dd083bc3a16bf1b51bf)
+        ;
+
+        
+    
+    
+            marker_135e9929dfcf63d698a40f7f514a8ef3.bindTooltip(
+                `<div>
+                     Terreno - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_135e9929dfcf63d698a40f7f514a8ef3.setIcon(icon_c517761cc97800b8bb0f955b3c9cb610);
+            
+    
+            var marker_ccaad00844355b98b6f3358ebc8dfb43 = L.marker(
+                [-22.726860972753364, -43.44320746724854],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_d9bb1f7374e61261c6533a27f2af2f98 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9f7aecc1e7cdf60400d1b5b544c15998 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6c35e89a9647fdc625c319ef01f0995e = $(`<div id="html_6c35e89a9647fdc625c319ef01f0995e" style="width: 100.0%; height: 100.0%;"><b>Imóvel #36</b><br>Tipo: Apartamento<br>Cidade: Nova Iguaçu<br>Valor: R$ 754.172,40</div>`)[0];
+                popup_9f7aecc1e7cdf60400d1b5b544c15998.setContent(html_6c35e89a9647fdc625c319ef01f0995e);
+            
+        
+
+        marker_ccaad00844355b98b6f3358ebc8dfb43.bindPopup(popup_9f7aecc1e7cdf60400d1b5b544c15998)
+        ;
+
+        
+    
+    
+            marker_ccaad00844355b98b6f3358ebc8dfb43.bindTooltip(
+                `<div>
+                     Apartamento - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ccaad00844355b98b6f3358ebc8dfb43.setIcon(icon_d9bb1f7374e61261c6533a27f2af2f98);
+            
+    
+            var marker_40b71e7e2daabdce77ceea9446e707eb = L.marker(
+                [-22.72631778913954, -43.54931873415383],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_e1b02959c8fac5efe6801796657d9aa2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3f7afa8415d1cadcff2c5dd049a23795 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ffa5ab1c20ec9c003de7a68e4240766e = $(`<div id="html_ffa5ab1c20ec9c003de7a68e4240766e" style="width: 100.0%; height: 100.0%;"><b>Imóvel #37</b><br>Tipo: Apartamento<br>Cidade: Queimados<br>Valor: R$ 586.308,69</div>`)[0];
+                popup_3f7afa8415d1cadcff2c5dd049a23795.setContent(html_ffa5ab1c20ec9c003de7a68e4240766e);
+            
+        
+
+        marker_40b71e7e2daabdce77ceea9446e707eb.bindPopup(popup_3f7afa8415d1cadcff2c5dd049a23795)
+        ;
+
+        
+    
+    
+            marker_40b71e7e2daabdce77ceea9446e707eb.bindTooltip(
+                `<div>
+                     Apartamento - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_40b71e7e2daabdce77ceea9446e707eb.setIcon(icon_e1b02959c8fac5efe6801796657d9aa2);
+            
+    
+            var marker_41afe8891168feeb38aaf1b7d63da21a = L.marker(
+                [-22.709114578103765, -43.571634401400196],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_f722aadc6b19d67c6bc073f6f8469cf8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_802d7f4f44fa7a73437caa6edb2105b1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_468913a7abc95db8e98f6d4e810ae71f = $(`<div id="html_468913a7abc95db8e98f6d4e810ae71f" style="width: 100.0%; height: 100.0%;"><b>Imóvel #38</b><br>Tipo: Apartamento<br>Cidade: Queimados<br>Valor: R$ 381.628,62</div>`)[0];
+                popup_802d7f4f44fa7a73437caa6edb2105b1.setContent(html_468913a7abc95db8e98f6d4e810ae71f);
+            
+        
+
+        marker_41afe8891168feeb38aaf1b7d63da21a.bindPopup(popup_802d7f4f44fa7a73437caa6edb2105b1)
+        ;
+
+        
+    
+    
+            marker_41afe8891168feeb38aaf1b7d63da21a.bindTooltip(
+                `<div>
+                     Apartamento - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_41afe8891168feeb38aaf1b7d63da21a.setIcon(icon_f722aadc6b19d67c6bc073f6f8469cf8);
+            
+    
+            var marker_6862f9be976d29105b6102ec46949806 = L.marker(
+                [-22.740302823080278, -43.48030227715432],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_64c7f10220aa576e1e25b832b4a76633 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_efaa71ca74f9760c6cc7b5f091e9e829 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ec14f49d6a221292a9c00a6963fd0b80 = $(`<div id="html_ec14f49d6a221292a9c00a6963fd0b80" style="width: 100.0%; height: 100.0%;"><b>Imóvel #39</b><br>Tipo: Casa<br>Cidade: Nova Iguaçu<br>Valor: R$ 194.490,85</div>`)[0];
+                popup_efaa71ca74f9760c6cc7b5f091e9e829.setContent(html_ec14f49d6a221292a9c00a6963fd0b80);
+            
+        
+
+        marker_6862f9be976d29105b6102ec46949806.bindPopup(popup_efaa71ca74f9760c6cc7b5f091e9e829)
+        ;
+
+        
+    
+    
+            marker_6862f9be976d29105b6102ec46949806.bindTooltip(
+                `<div>
+                     Casa - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6862f9be976d29105b6102ec46949806.setIcon(icon_64c7f10220aa576e1e25b832b4a76633);
+            
+    
+            var marker_64f6a31d40b5a127fa420759d1451c76 = L.marker(
+                [-22.771741747360455, -43.436086748688375],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_2794bb87ce8f9195dd0f01477ce912dc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c62bb8605d178837db50959202f91b68 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5f8208c79d9e8dac8c71677b336b3692 = $(`<div id="html_5f8208c79d9e8dac8c71677b336b3692" style="width: 100.0%; height: 100.0%;"><b>Imóvel #40</b><br>Tipo: Apartamento<br>Cidade: Nova Iguaçu<br>Valor: R$ 367.687,63</div>`)[0];
+                popup_c62bb8605d178837db50959202f91b68.setContent(html_5f8208c79d9e8dac8c71677b336b3692);
+            
+        
+
+        marker_64f6a31d40b5a127fa420759d1451c76.bindPopup(popup_c62bb8605d178837db50959202f91b68)
+        ;
+
+        
+    
+    
+            marker_64f6a31d40b5a127fa420759d1451c76.bindTooltip(
+                `<div>
+                     Apartamento - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_64f6a31d40b5a127fa420759d1451c76.setIcon(icon_2794bb87ce8f9195dd0f01477ce912dc);
+            
+    
+            var marker_5aa10c98c5f60f55de75823008be0142 = L.marker(
+                [-22.706871346055525, -43.55074283761362],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_6cc37472613b4d898bd102cbff12057f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d4e2f4810c0c260266966d9f40e5ae89 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b3c8a1854142d84413566f5245df42b8 = $(`<div id="html_b3c8a1854142d84413566f5245df42b8" style="width: 100.0%; height: 100.0%;"><b>Imóvel #41</b><br>Tipo: Casa<br>Cidade: Queimados<br>Valor: R$ 377.628,33</div>`)[0];
+                popup_d4e2f4810c0c260266966d9f40e5ae89.setContent(html_b3c8a1854142d84413566f5245df42b8);
+            
+        
+
+        marker_5aa10c98c5f60f55de75823008be0142.bindPopup(popup_d4e2f4810c0c260266966d9f40e5ae89)
+        ;
+
+        
+    
+    
+            marker_5aa10c98c5f60f55de75823008be0142.bindTooltip(
+                `<div>
+                     Casa - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5aa10c98c5f60f55de75823008be0142.setIcon(icon_6cc37472613b4d898bd102cbff12057f);
+            
+    
+            var marker_8411c71f6b904f552ec61804d0050eca = L.marker(
+                [-22.763933012036844, -43.489448176903004],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_8f83094360827b20038b18a0f5b4c1c6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6c45a6e8a76a1091737d7c5d8913b765 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f16a7bb75dcd28ee6a9d11b6f6ade318 = $(`<div id="html_f16a7bb75dcd28ee6a9d11b6f6ade318" style="width: 100.0%; height: 100.0%;"><b>Imóvel #42</b><br>Tipo: Casa<br>Cidade: Nova Iguaçu<br>Valor: R$ 660.724,32</div>`)[0];
+                popup_6c45a6e8a76a1091737d7c5d8913b765.setContent(html_f16a7bb75dcd28ee6a9d11b6f6ade318);
+            
+        
+
+        marker_8411c71f6b904f552ec61804d0050eca.bindPopup(popup_6c45a6e8a76a1091737d7c5d8913b765)
+        ;
+
+        
+    
+    
+            marker_8411c71f6b904f552ec61804d0050eca.bindTooltip(
+                `<div>
+                     Casa - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8411c71f6b904f552ec61804d0050eca.setIcon(icon_8f83094360827b20038b18a0f5b4c1c6);
+            
+    
+            var marker_1cf3af401ec3a5b1343e3b313959add0 = L.marker(
+                [-22.71070776677626, -43.570941138285356],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_f3a79a95b6a787f4762e92e32e9e5957 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_43d7787019bc5167a833618edc14d47c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fea8db0c601fab669ceab423fdde635b = $(`<div id="html_fea8db0c601fab669ceab423fdde635b" style="width: 100.0%; height: 100.0%;"><b>Imóvel #43</b><br>Tipo: Apartamento<br>Cidade: Queimados<br>Valor: R$ 596.290,23</div>`)[0];
+                popup_43d7787019bc5167a833618edc14d47c.setContent(html_fea8db0c601fab669ceab423fdde635b);
+            
+        
+
+        marker_1cf3af401ec3a5b1343e3b313959add0.bindPopup(popup_43d7787019bc5167a833618edc14d47c)
+        ;
+
+        
+    
+    
+            marker_1cf3af401ec3a5b1343e3b313959add0.bindTooltip(
+                `<div>
+                     Apartamento - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1cf3af401ec3a5b1343e3b313959add0.setIcon(icon_f3a79a95b6a787f4762e92e32e9e5957);
+            
+    
+            var marker_cb37967fa0e0f9d0f2822dd8aa898380 = L.marker(
+                [-22.747988217354347, -43.45018989385352],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_62fbcac49d51e60a8a91d48b4e5e5002 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b0f98deb2590cf807782606c9e76fd53 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eaf0260fcedbbf9f60b7729c90f2c9d7 = $(`<div id="html_eaf0260fcedbbf9f60b7729c90f2c9d7" style="width: 100.0%; height: 100.0%;"><b>Imóvel #44</b><br>Tipo: Apartamento<br>Cidade: Nova Iguaçu<br>Valor: R$ 771.048,92</div>`)[0];
+                popup_b0f98deb2590cf807782606c9e76fd53.setContent(html_eaf0260fcedbbf9f60b7729c90f2c9d7);
+            
+        
+
+        marker_cb37967fa0e0f9d0f2822dd8aa898380.bindPopup(popup_b0f98deb2590cf807782606c9e76fd53)
+        ;
+
+        
+    
+    
+            marker_cb37967fa0e0f9d0f2822dd8aa898380.bindTooltip(
+                `<div>
+                     Apartamento - Nova Iguaçu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cb37967fa0e0f9d0f2822dd8aa898380.setIcon(icon_62fbcac49d51e60a8a91d48b4e5e5002);
+            
+    
+            var marker_0e0d89b0c3e0776f1fc487f40e6c7423 = L.marker(
+                [-22.71456901263701, -43.57479753664615],
+                {
+}
+            ).addTo(marker_cluster_88c138d4d272d69c48c524a0ab4418cb);
+        
+    
+            var icon_a6e99aefe6302d332e53c94e45aca05c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_55db5c7a9b2c3d268e3eaf954e467df9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b1a56c36a2ed031d32eda829f521b8af = $(`<div id="html_b1a56c36a2ed031d32eda829f521b8af" style="width: 100.0%; height: 100.0%;"><b>Imóvel #45</b><br>Tipo: Apartamento<br>Cidade: Queimados<br>Valor: R$ 480.550,45</div>`)[0];
+                popup_55db5c7a9b2c3d268e3eaf954e467df9.setContent(html_b1a56c36a2ed031d32eda829f521b8af);
+            
+        
+
+        marker_0e0d89b0c3e0776f1fc487f40e6c7423.bindPopup(popup_55db5c7a9b2c3d268e3eaf954e467df9)
+        ;
+
+        
+    
+    
+            marker_0e0d89b0c3e0776f1fc487f40e6c7423.bindTooltip(
+                `<div>
+                     Apartamento - Queimados
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0e0d89b0c3e0776f1fc487f40e6c7423.setIcon(icon_a6e99aefe6302d332e53c94e45aca05c);
+            
+    
+            marker_cluster_88c138d4d272d69c48c524a0ab4418cb.addTo(map_a351b03de21144385c9e246775a80597);
+        
+    
+            var layer_control_cdca9d6571e5e45df24f5bb13825d915_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_f871e78447c9900f206f08e3f9a2125c,
+                },
+                overlays :  {
+                    "Im\u00f3veis" : marker_cluster_88c138d4d272d69c48c524a0ab4418cb,
+                },
+            };
+            let layer_control_cdca9d6571e5e45df24f5bb13825d915 = L.control.layers(
+                layer_control_cdca9d6571e5e45df24f5bb13825d915_layers.base_layers,
+                layer_control_cdca9d6571e5e45df24f5bb13825d915_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_a351b03de21144385c9e246775a80597);
+
+        
+</script>
+</html>

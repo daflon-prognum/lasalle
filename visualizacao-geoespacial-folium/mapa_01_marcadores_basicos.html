@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_111070dcc5aa6c3fa7982d676cf438ce {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_111070dcc5aa6c3fa7982d676cf438ce" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_111070dcc5aa6c3fa7982d676cf438ce = L.map(
+                "map_111070dcc5aa6c3fa7982d676cf438ce",
+                {
+                    center: [-22.736785025907697, -43.50738358758272],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_da1192806a75b70991e1c2b500b8f86e = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_da1192806a75b70991e1c2b500b8f86e.addTo(map_111070dcc5aa6c3fa7982d676cf438ce);
+        
+    
+            var marker_0bab4a054333ab4a0c2e8bd3bf47d359 = L.marker(
+                [-22.714426310323375, -43.57138840919782],
+                {
+}
+            ).addTo(map_111070dcc5aa6c3fa7982d676cf438ce);
+        
+    
+        var popup_3b238fc5c8ba934325b5d4eaabb25de1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b732bf287e0dea4b3cb1709c02eff75d = $(`<div id="html_b732bf287e0dea4b3cb1709c02eff75d" style="width: 100.0%; height: 100.0%;"><b>Imóvel #1</b><br>Tipo: Casa<br>Cidade: Queimados<br>Valor: R$ 613.765,60</div>`)[0];
+                popup_3b238fc5c8ba934325b5d4eaabb25de1.setContent(html_b732bf287e0dea4b3cb1709c02eff75d);
+            
+        
+
+        marker_0bab4a054333ab4a0c2e8bd3bf47d359.bindPopup(popup_3b238fc5c8ba934325b5d4eaabb25de1)
+        ;
+
+        
+    
+    
+            var marker_a88724903294a100201dfdd2d3606eb6 = L.marker(
+                [-22.73755359069016, -43.43988185026465],
+                {
+}
+            ).addTo(map_111070dcc5aa6c3fa7982d676cf438ce);
+        
+    
+        var popup_857ab086b6d27aaf3c029fc50d7c5497 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_876c8c4ad28623238f28eacf662cf700 = $(`<div id="html_876c8c4ad28623238f28eacf662cf700" style="width: 100.0%; height: 100.0%;"><b>Imóvel #2</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 368.197,75</div>`)[0];
+                popup_857ab086b6d27aaf3c029fc50d7c5497.setContent(html_876c8c4ad28623238f28eacf662cf700);
+            
+        
+
+        marker_a88724903294a100201dfdd2d3606eb6.bindPopup(popup_857ab086b6d27aaf3c029fc50d7c5497)
+        ;
+
+        
+    
+    
+            var marker_530c27b45e1490ca1bd166053cd00c31 = L.marker(
+                [-22.73223452200459, -43.4707531961017],
+                {
+}
+            ).addTo(map_111070dcc5aa6c3fa7982d676cf438ce);
+        
+    
+        var popup_0193fa566cb96bb62f3296e72442a7d0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6c2d834e2c09820dfe41ffedc6615d2d = $(`<div id="html_6c2d834e2c09820dfe41ffedc6615d2d" style="width: 100.0%; height: 100.0%;"><b>Imóvel #3</b><br>Tipo: Apartamento<br>Cidade: Nova Iguaçu<br>Valor: R$ 514.047,61</div>`)[0];
+                popup_0193fa566cb96bb62f3296e72442a7d0.setContent(html_6c2d834e2c09820dfe41ffedc6615d2d);
+            
+        
+
+        marker_530c27b45e1490ca1bd166053cd00c31.bindPopup(popup_0193fa566cb96bb62f3296e72442a7d0)
+        ;
+
+        
+    
+    
+            var marker_8c71b000cca259e8185da2d06105a9c9 = L.marker(
+                [-22.76691979150169, -43.47880888937601],
+                {
+}
+            ).addTo(map_111070dcc5aa6c3fa7982d676cf438ce);
+        
+    
+        var popup_34199e84a2b595d1af13279c47d64b04 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e29b9ce6b74303d5655e1736e8756dbf = $(`<div id="html_e29b9ce6b74303d5655e1736e8756dbf" style="width: 100.0%; height: 100.0%;"><b>Imóvel #4</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 532.697,20</div>`)[0];
+                popup_34199e84a2b595d1af13279c47d64b04.setContent(html_e29b9ce6b74303d5655e1736e8756dbf);
+            
+        
+
+        marker_8c71b000cca259e8185da2d06105a9c9.bindPopup(popup_34199e84a2b595d1af13279c47d64b04)
+        ;
+
+        
+    
+    
+            var marker_6cc9b76675d2137ea3a9764e1a20c543 = L.marker(
+                [-22.731597923018892, -43.57336899433781],
+                {
+}
+            ).addTo(map_111070dcc5aa6c3fa7982d676cf438ce);
+        
+    
+        var popup_442398a2793ecad29e09878d658aaa02 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8a034d068159b241411a25674c29abe0 = $(`<div id="html_8a034d068159b241411a25674c29abe0" style="width: 100.0%; height: 100.0%;"><b>Imóvel #5</b><br>Tipo: Casa<br>Cidade: Queimados<br>Valor: R$ 279.398,12</div>`)[0];
+                popup_442398a2793ecad29e09878d658aaa02.setContent(html_8a034d068159b241411a25674c29abe0);
+            
+        
+
+        marker_6cc9b76675d2137ea3a9764e1a20c543.bindPopup(popup_442398a2793ecad29e09878d658aaa02)
+        ;
+
+        
+    
+</script>
+</html>

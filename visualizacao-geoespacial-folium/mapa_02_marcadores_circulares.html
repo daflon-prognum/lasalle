@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2f4d81d4634a3c283871e2d98912107d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_2f4d81d4634a3c283871e2d98912107d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2f4d81d4634a3c283871e2d98912107d = L.map(
+                "map_2f4d81d4634a3c283871e2d98912107d",
+                {
+                    center: [-22.736785025907697, -43.50738358758272],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ef2bb63df7d270a9ca3dd15fd868c88f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_ef2bb63df7d270a9ca3dd15fd868c88f.addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+            var circle_marker_501f59f3f149168ae17cc4ee6b45d899 = L.circleMarker(
+                [-22.714426310323375, -43.57138840919782],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_5a383a3f8de89be82a7e2b31d40d0a45 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2bb1ae3e4ab9656ae288ffc5e1922358 = $(`<div id="html_2bb1ae3e4ab9656ae288ffc5e1922358" style="width: 100.0%; height: 100.0%;"><b>Imóvel #1</b><br>Tipo: Casa<br>Cidade: Queimados<br>Valor: R$ 613.765,60</div>`)[0];
+                popup_5a383a3f8de89be82a7e2b31d40d0a45.setContent(html_2bb1ae3e4ab9656ae288ffc5e1922358);
+            
+        
+
+        circle_marker_501f59f3f149168ae17cc4ee6b45d899.bindPopup(popup_5a383a3f8de89be82a7e2b31d40d0a45)
+        ;
+
+        
+    
+    
+            circle_marker_501f59f3f149168ae17cc4ee6b45d899.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6ed6fa21b6ce1f27d0e6a4e6bac347a4 = L.circleMarker(
+                [-22.73755359069016, -43.43988185026465],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_bffd5dac419174445ec180ecf0a1d1dd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e3eadfbdb122d99f771b3fce98a477e3 = $(`<div id="html_e3eadfbdb122d99f771b3fce98a477e3" style="width: 100.0%; height: 100.0%;"><b>Imóvel #2</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 368.197,75</div>`)[0];
+                popup_bffd5dac419174445ec180ecf0a1d1dd.setContent(html_e3eadfbdb122d99f771b3fce98a477e3);
+            
+        
+
+        circle_marker_6ed6fa21b6ce1f27d0e6a4e6bac347a4.bindPopup(popup_bffd5dac419174445ec180ecf0a1d1dd)
+        ;
+
+        
+    
+    
+            circle_marker_6ed6fa21b6ce1f27d0e6a4e6bac347a4.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9a353ed4d44582eed7750d6549af9760 = L.circleMarker(
+                [-22.73223452200459, -43.4707531961017],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_78f41ae017ed81bddcfe56d6dda802dd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c1aa57302d83330168f2808164e08438 = $(`<div id="html_c1aa57302d83330168f2808164e08438" style="width: 100.0%; height: 100.0%;"><b>Imóvel #3</b><br>Tipo: Apartamento<br>Cidade: Nova Iguaçu<br>Valor: R$ 514.047,61</div>`)[0];
+                popup_78f41ae017ed81bddcfe56d6dda802dd.setContent(html_c1aa57302d83330168f2808164e08438);
+            
+        
+
+        circle_marker_9a353ed4d44582eed7750d6549af9760.bindPopup(popup_78f41ae017ed81bddcfe56d6dda802dd)
+        ;
+
+        
+    
+    
+            circle_marker_9a353ed4d44582eed7750d6549af9760.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f885440785f3c415ca0f67842701c47b = L.circleMarker(
+                [-22.76691979150169, -43.47880888937601],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_bab2bd247a9c56f7a6163446cb67e9dc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_80827b59061de20a1f36da48381904d2 = $(`<div id="html_80827b59061de20a1f36da48381904d2" style="width: 100.0%; height: 100.0%;"><b>Imóvel #4</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 532.697,20</div>`)[0];
+                popup_bab2bd247a9c56f7a6163446cb67e9dc.setContent(html_80827b59061de20a1f36da48381904d2);
+            
+        
+
+        circle_marker_f885440785f3c415ca0f67842701c47b.bindPopup(popup_bab2bd247a9c56f7a6163446cb67e9dc)
+        ;
+
+        
+    
+    
+            circle_marker_f885440785f3c415ca0f67842701c47b.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d9585dd72047efb84d056b6989f62ead = L.circleMarker(
+                [-22.731597923018892, -43.57336899433781],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_f12ba4a649f59c230c430ef5872dee26 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a70437e696b3540b961336f3558bb543 = $(`<div id="html_a70437e696b3540b961336f3558bb543" style="width: 100.0%; height: 100.0%;"><b>Imóvel #5</b><br>Tipo: Casa<br>Cidade: Queimados<br>Valor: R$ 279.398,12</div>`)[0];
+                popup_f12ba4a649f59c230c430ef5872dee26.setContent(html_a70437e696b3540b961336f3558bb543);
+            
+        
+
+        circle_marker_d9585dd72047efb84d056b6989f62ead.bindPopup(popup_f12ba4a649f59c230c430ef5872dee26)
+        ;
+
+        
+    
+    
+            circle_marker_d9585dd72047efb84d056b6989f62ead.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_debf9a6af1c53a86c651bbf5fb0cb7eb = L.circleMarker(
+                [-22.726882593498324, -43.55136428227247],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_5f7ac3c900b386f6c1a1ed5ac928d34e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aac9ee4b028fdf87185285f291ec8879 = $(`<div id="html_aac9ee4b028fdf87185285f291ec8879" style="width: 100.0%; height: 100.0%;"><b>Imóvel #6</b><br>Tipo: Casa<br>Cidade: Queimados<br>Valor: R$ 828.709,24</div>`)[0];
+                popup_5f7ac3c900b386f6c1a1ed5ac928d34e.setContent(html_aac9ee4b028fdf87185285f291ec8879);
+            
+        
+
+        circle_marker_debf9a6af1c53a86c651bbf5fb0cb7eb.bindPopup(popup_5f7ac3c900b386f6c1a1ed5ac928d34e)
+        ;
+
+        
+    
+    
+            circle_marker_debf9a6af1c53a86c651bbf5fb0cb7eb.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a3d44ceb2f03d8df4657171b1033bb50 = L.circleMarker(
+                [-22.718915688454953, -43.54789742552631],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_fc0daff56c87f1db4b2457d7cedaa291 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ef0a60b31aeeb9dd242f8e020424b924 = $(`<div id="html_ef0a60b31aeeb9dd242f8e020424b924" style="width: 100.0%; height: 100.0%;"><b>Imóvel #7</b><br>Tipo: Apartamento<br>Cidade: Queimados<br>Valor: R$ 692.592,98</div>`)[0];
+                popup_fc0daff56c87f1db4b2457d7cedaa291.setContent(html_ef0a60b31aeeb9dd242f8e020424b924);
+            
+        
+
+        circle_marker_a3d44ceb2f03d8df4657171b1033bb50.bindPopup(popup_fc0daff56c87f1db4b2457d7cedaa291)
+        ;
+
+        
+    
+    
+            circle_marker_a3d44ceb2f03d8df4657171b1033bb50.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_68b312b1023fce5390024b7f47c8cbf9 = L.circleMarker(
+                [-22.73691911404465, -43.48900473026433],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_6a9e550fcc4a2f958c95754363c11422 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ec0d019c1c0d58856bbb45aef87fa258 = $(`<div id="html_ec0d019c1c0d58856bbb45aef87fa258" style="width: 100.0%; height: 100.0%;"><b>Imóvel #8</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 807.649,26</div>`)[0];
+                popup_6a9e550fcc4a2f958c95754363c11422.setContent(html_ec0d019c1c0d58856bbb45aef87fa258);
+            
+        
+
+        circle_marker_68b312b1023fce5390024b7f47c8cbf9.bindPopup(popup_6a9e550fcc4a2f958c95754363c11422)
+        ;
+
+        
+    
+    
+            circle_marker_68b312b1023fce5390024b7f47c8cbf9.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ee04e2ddb504030f04a2a13d877bffe1 = L.circleMarker(
+                [-22.73435616500462, -43.45927441650204],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_d431df9b734eb89e048a5f14b3dd0907 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fb02c27e21539a3837e3049e540b486e = $(`<div id="html_fb02c27e21539a3837e3049e540b486e" style="width: 100.0%; height: 100.0%;"><b>Imóvel #9</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 776.379,15</div>`)[0];
+                popup_d431df9b734eb89e048a5f14b3dd0907.setContent(html_fb02c27e21539a3837e3049e540b486e);
+            
+        
+
+        circle_marker_ee04e2ddb504030f04a2a13d877bffe1.bindPopup(popup_d431df9b734eb89e048a5f14b3dd0907)
+        ;
+
+        
+    
+    
+            circle_marker_ee04e2ddb504030f04a2a13d877bffe1.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_46d80b717a04927ad589b41a3bff26f0 = L.circleMarker(
+                [-22.785582872168128, -43.476410253488126],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_3fb96b8424be9c93cc4001744bb79a9c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cd384291dc5e74caba7be08ffd43c0f9 = $(`<div id="html_cd384291dc5e74caba7be08ffd43c0f9" style="width: 100.0%; height: 100.0%;"><b>Imóvel #10</b><br>Tipo: Apartamento<br>Cidade: Nova Iguaçu<br>Valor: R$ 568.529,99</div>`)[0];
+                popup_3fb96b8424be9c93cc4001744bb79a9c.setContent(html_cd384291dc5e74caba7be08ffd43c0f9);
+            
+        
+
+        circle_marker_46d80b717a04927ad589b41a3bff26f0.bindPopup(popup_3fb96b8424be9c93cc4001744bb79a9c)
+        ;
+
+        
+    
+    
+            circle_marker_46d80b717a04927ad589b41a3bff26f0.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b4fdb8cd1a20b6b63d463073a798f3da = L.circleMarker(
+                [-22.715570107896898, -43.549193088383625],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_0beef24ace739384bdba03eb767c19d3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_62c6f6c0b6005001c638940baa9acecf = $(`<div id="html_62c6f6c0b6005001c638940baa9acecf" style="width: 100.0%; height: 100.0%;"><b>Imóvel #11</b><br>Tipo: Terreno<br>Cidade: Queimados<br>Valor: R$ 795.311,96</div>`)[0];
+                popup_0beef24ace739384bdba03eb767c19d3.setContent(html_62c6f6c0b6005001c638940baa9acecf);
+            
+        
+
+        circle_marker_b4fdb8cd1a20b6b63d463073a798f3da.bindPopup(popup_0beef24ace739384bdba03eb767c19d3)
+        ;
+
+        
+    
+    
+            circle_marker_b4fdb8cd1a20b6b63d463073a798f3da.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a2de8f4bfea51477c073dccd06649834 = L.circleMarker(
+                [-22.760955339811073, -43.4795380142597],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_d4b1be26f40f331ed99e7f7a232e5f87 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8dd048d3ad8b1962bc8ef78b5a63fc38 = $(`<div id="html_8dd048d3ad8b1962bc8ef78b5a63fc38" style="width: 100.0%; height: 100.0%;"><b>Imóvel #12</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 211.944,75</div>`)[0];
+                popup_d4b1be26f40f331ed99e7f7a232e5f87.setContent(html_8dd048d3ad8b1962bc8ef78b5a63fc38);
+            
+        
+
+        circle_marker_a2de8f4bfea51477c073dccd06649834.bindPopup(popup_d4b1be26f40f331ed99e7f7a232e5f87)
+        ;
+
+        
+    
+    
+            circle_marker_a2de8f4bfea51477c073dccd06649834.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_97fe47d453b31d7641363f8b03d4d13e = L.circleMarker(
+                [-22.772673531371755, -43.448543735713855],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_63258cf7ec83b82c1ed923cfc78b5679 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8d8317fb8482ad144048d023f77bab52 = $(`<div id="html_8d8317fb8482ad144048d023f77bab52" style="width: 100.0%; height: 100.0%;"><b>Imóvel #13</b><br>Tipo: Casa<br>Cidade: Nova Iguaçu<br>Valor: R$ 287.188,00</div>`)[0];
+                popup_63258cf7ec83b82c1ed923cfc78b5679.setContent(html_8d8317fb8482ad144048d023f77bab52);
+            
+        
+
+        circle_marker_97fe47d453b31d7641363f8b03d4d13e.bindPopup(popup_63258cf7ec83b82c1ed923cfc78b5679)
+        ;
+
+        
+    
+    
+            circle_marker_97fe47d453b31d7641363f8b03d4d13e.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_16a25ec6560e06bb9f64c32770fbed45 = L.circleMarker(
+                [-22.731205385306655, -43.55953058614798],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_820addaaebe2d82acf04e11a05b9b64a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0c9bfcffdad590ee0005f628b45d7c2b = $(`<div id="html_0c9bfcffdad590ee0005f628b45d7c2b" style="width: 100.0%; height: 100.0%;"><b>Imóvel #14</b><br>Tipo: Terreno<br>Cidade: Queimados<br>Valor: R$ 181.659,10</div>`)[0];
+                popup_820addaaebe2d82acf04e11a05b9b64a.setContent(html_0c9bfcffdad590ee0005f628b45d7c2b);
+            
+        
+
+        circle_marker_16a25ec6560e06bb9f64c32770fbed45.bindPopup(popup_820addaaebe2d82acf04e11a05b9b64a)
+        ;
+
+        
+    
+    
+            circle_marker_16a25ec6560e06bb9f64c32770fbed45.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7a525eba23ddda7ef5bcaf197704d0b1 = L.circleMarker(
+                [-22.722495393143856, -43.53753080045053],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_c4a1473ad5df2c558a358796a1e08eb8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1f8920dfca49d44238f738895e804ed8 = $(`<div id="html_1f8920dfca49d44238f738895e804ed8" style="width: 100.0%; height: 100.0%;"><b>Imóvel #15</b><br>Tipo: Terreno<br>Cidade: Queimados<br>Valor: R$ 377.731,23</div>`)[0];
+                popup_c4a1473ad5df2c558a358796a1e08eb8.setContent(html_1f8920dfca49d44238f738895e804ed8);
+            
+        
+
+        circle_marker_7a525eba23ddda7ef5bcaf197704d0b1.bindPopup(popup_c4a1473ad5df2c558a358796a1e08eb8)
+        ;
+
+        
+    
+    
+            circle_marker_7a525eba23ddda7ef5bcaf197704d0b1.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1f9115cf580e466b6954f0453c766d4a = L.circleMarker(
+                [-22.6982836118435, -43.56949916223416],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_e7bec7dc66f12ab47c2529a2ad370dba = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dbcd3fd8c547d73d92d0c399675cad44 = $(`<div id="html_dbcd3fd8c547d73d92d0c399675cad44" style="width: 100.0%; height: 100.0%;"><b>Imóvel #16</b><br>Tipo: Apartamento<br>Cidade: Queimados<br>Valor: R$ 422.074,10</div>`)[0];
+                popup_e7bec7dc66f12ab47c2529a2ad370dba.setContent(html_dbcd3fd8c547d73d92d0c399675cad44);
+            
+        
+
+        circle_marker_1f9115cf580e466b6954f0453c766d4a.bindPopup(popup_e7bec7dc66f12ab47c2529a2ad370dba)
+        ;
+
+        
+    
+    
+            circle_marker_1f9115cf580e466b6954f0453c766d4a.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5020f42a4a627aaf526ed28985b3be5e = L.circleMarker(
+                [-22.72307188271917, -43.56135734595799],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_ccb22546602f16a310b0abc833d688b5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_914a374ba9346b69bf5f369952b52ffd = $(`<div id="html_914a374ba9346b69bf5f369952b52ffd" style="width: 100.0%; height: 100.0%;"><b>Imóvel #17</b><br>Tipo: Apartamento<br>Cidade: Queimados<br>Valor: R$ 339.944,32</div>`)[0];
+                popup_ccb22546602f16a310b0abc833d688b5.setContent(html_914a374ba9346b69bf5f369952b52ffd);
+            
+        
+
+        circle_marker_5020f42a4a627aaf526ed28985b3be5e.bindPopup(popup_ccb22546602f16a310b0abc833d688b5)
+        ;
+
+        
+    
+    
+            circle_marker_5020f42a4a627aaf526ed28985b3be5e.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8af443c27d88aca022d3959690f40649 = L.circleMarker(
+                [-22.754872562695397, -43.48319158872557],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_8847d6b924bfd73331009a3da5c9cc52 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1b5041df90eac4dc91f3ec3d8f8a2576 = $(`<div id="html_1b5041df90eac4dc91f3ec3d8f8a2576" style="width: 100.0%; height: 100.0%;"><b>Imóvel #18</b><br>Tipo: Casa<br>Cidade: Nova Iguaçu<br>Valor: R$ 730.116,26</div>`)[0];
+                popup_8847d6b924bfd73331009a3da5c9cc52.setContent(html_1b5041df90eac4dc91f3ec3d8f8a2576);
+            
+        
+
+        circle_marker_8af443c27d88aca022d3959690f40649.bindPopup(popup_8847d6b924bfd73331009a3da5c9cc52)
+        ;
+
+        
+    
+    
+            circle_marker_8af443c27d88aca022d3959690f40649.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8d7b62f14fc6b19fc9fe282ff310aef5 = L.circleMarker(
+                [-22.743818862466288, -43.434518382903285],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_d07d1cd1ecba9c36cb58bc531771e6bb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bb01a42b68d8fa7d11d9d921df274161 = $(`<div id="html_bb01a42b68d8fa7d11d9d921df274161" style="width: 100.0%; height: 100.0%;"><b>Imóvel #19</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 399.727,33</div>`)[0];
+                popup_d07d1cd1ecba9c36cb58bc531771e6bb.setContent(html_bb01a42b68d8fa7d11d9d921df274161);
+            
+        
+
+        circle_marker_8d7b62f14fc6b19fc9fe282ff310aef5.bindPopup(popup_d07d1cd1ecba9c36cb58bc531771e6bb)
+        ;
+
+        
+    
+    
+            circle_marker_8d7b62f14fc6b19fc9fe282ff310aef5.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_45079cb148e630c67c648a8966762d3a = L.circleMarker(
+                [-22.721454815904828, -43.53990642586476],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_4a3e71e1886c780bcf56c2ccfeacc2c2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fd6669ea5a633fc1ff848bd63a67526f = $(`<div id="html_fd6669ea5a633fc1ff848bd63a67526f" style="width: 100.0%; height: 100.0%;"><b>Imóvel #20</b><br>Tipo: Terreno<br>Cidade: Queimados<br>Valor: R$ 346.654,16</div>`)[0];
+                popup_4a3e71e1886c780bcf56c2ccfeacc2c2.setContent(html_fd6669ea5a633fc1ff848bd63a67526f);
+            
+        
+
+        circle_marker_45079cb148e630c67c648a8966762d3a.bindPopup(popup_4a3e71e1886c780bcf56c2ccfeacc2c2)
+        ;
+
+        
+    
+    
+            circle_marker_45079cb148e630c67c648a8966762d3a.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bd226908e346894037816486ce028c1e = L.circleMarker(
+                [-22.727693075036743, -43.47452350233709],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_db719cae35e033ebd3534373f58f78d6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ef29b488694481c98286c7ed129dbf30 = $(`<div id="html_ef29b488694481c98286c7ed129dbf30" style="width: 100.0%; height: 100.0%;"><b>Imóvel #21</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 529.887,26</div>`)[0];
+                popup_db719cae35e033ebd3534373f58f78d6.setContent(html_ef29b488694481c98286c7ed129dbf30);
+            
+        
+
+        circle_marker_bd226908e346894037816486ce028c1e.bindPopup(popup_db719cae35e033ebd3534373f58f78d6)
+        ;
+
+        
+    
+    
+            circle_marker_bd226908e346894037816486ce028c1e.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_973b83a6e5e6f0a2171157df58ccdb37 = L.circleMarker(
+                [-22.69750210820232, -43.54860063815863],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_dc088eb932908eef93c478604765c11d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d6bfd33b11eb35fd6ab5b9ca0266d3eb = $(`<div id="html_d6bfd33b11eb35fd6ab5b9ca0266d3eb" style="width: 100.0%; height: 100.0%;"><b>Imóvel #22</b><br>Tipo: Casa<br>Cidade: Queimados<br>Valor: R$ 248.646,96</div>`)[0];
+                popup_dc088eb932908eef93c478604765c11d.setContent(html_d6bfd33b11eb35fd6ab5b9ca0266d3eb);
+            
+        
+
+        circle_marker_973b83a6e5e6f0a2171157df58ccdb37.bindPopup(popup_dc088eb932908eef93c478604765c11d)
+        ;
+
+        
+    
+    
+            circle_marker_973b83a6e5e6f0a2171157df58ccdb37.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1efcbc2eda1e7576af2cec6c2ddc2cf8 = L.circleMarker(
+                [-22.725928708166986, -43.54231111199195],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_999deec5e21694990450e53914f93b15 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_18326ba10323908a6e3636e9db24a16a = $(`<div id="html_18326ba10323908a6e3636e9db24a16a" style="width: 100.0%; height: 100.0%;"><b>Imóvel #23</b><br>Tipo: Casa<br>Cidade: Queimados<br>Valor: R$ 711.537,89</div>`)[0];
+                popup_999deec5e21694990450e53914f93b15.setContent(html_18326ba10323908a6e3636e9db24a16a);
+            
+        
+
+        circle_marker_1efcbc2eda1e7576af2cec6c2ddc2cf8.bindPopup(popup_999deec5e21694990450e53914f93b15)
+        ;
+
+        
+    
+    
+            circle_marker_1efcbc2eda1e7576af2cec6c2ddc2cf8.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_84be2632c4fcdb0c36d72a6df0ef3e3c = L.circleMarker(
+                [-22.716110059764304, -43.552791967536024],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_9c4d76eafb0acf16cf230aafa4d79560 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4ca6db58badaadc2b00ba1d8cc55830e = $(`<div id="html_4ca6db58badaadc2b00ba1d8cc55830e" style="width: 100.0%; height: 100.0%;"><b>Imóvel #24</b><br>Tipo: Apartamento<br>Cidade: Queimados<br>Valor: R$ 202.185,45</div>`)[0];
+                popup_9c4d76eafb0acf16cf230aafa4d79560.setContent(html_4ca6db58badaadc2b00ba1d8cc55830e);
+            
+        
+
+        circle_marker_84be2632c4fcdb0c36d72a6df0ef3e3c.bindPopup(popup_9c4d76eafb0acf16cf230aafa4d79560)
+        ;
+
+        
+    
+    
+            circle_marker_84be2632c4fcdb0c36d72a6df0ef3e3c.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2f0c9915f36d0457dfbad13394976859 = L.circleMarker(
+                [-22.767947301410995, -43.45822096529864],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_645f4f7179f64d31fb4039ba8edec9f1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_02261d695b08cffc012365a5ce519200 = $(`<div id="html_02261d695b08cffc012365a5ce519200" style="width: 100.0%; height: 100.0%;"><b>Imóvel #25</b><br>Tipo: Casa<br>Cidade: Nova Iguaçu<br>Valor: R$ 840.820,86</div>`)[0];
+                popup_645f4f7179f64d31fb4039ba8edec9f1.setContent(html_02261d695b08cffc012365a5ce519200);
+            
+        
+
+        circle_marker_2f0c9915f36d0457dfbad13394976859.bindPopup(popup_645f4f7179f64d31fb4039ba8edec9f1)
+        ;
+
+        
+    
+    
+            circle_marker_2f0c9915f36d0457dfbad13394976859.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_54cd9fd66359f140dca70f6e361ca74e = L.circleMarker(
+                [-22.768909570337353, -43.47548886254597],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_626eaadddacca480a123d4d242622e43 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_433cd7c80ae78305e32ee7f45d02ae84 = $(`<div id="html_433cd7c80ae78305e32ee7f45d02ae84" style="width: 100.0%; height: 100.0%;"><b>Imóvel #26</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 690.571,34</div>`)[0];
+                popup_626eaadddacca480a123d4d242622e43.setContent(html_433cd7c80ae78305e32ee7f45d02ae84);
+            
+        
+
+        circle_marker_54cd9fd66359f140dca70f6e361ca74e.bindPopup(popup_626eaadddacca480a123d4d242622e43)
+        ;
+
+        
+    
+    
+            circle_marker_54cd9fd66359f140dca70f6e361ca74e.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_99feecd2055232d620fbeb42a6390788 = L.circleMarker(
+                [-22.73452452210582, -43.57127588928776],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_67635b41cc96e06547583b806ca4fc6d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4c3f5aa6588ddec2bb7781a20a3d5187 = $(`<div id="html_4c3f5aa6588ddec2bb7781a20a3d5187" style="width: 100.0%; height: 100.0%;"><b>Imóvel #27</b><br>Tipo: Terreno<br>Cidade: Queimados<br>Valor: R$ 289.100,98</div>`)[0];
+                popup_67635b41cc96e06547583b806ca4fc6d.setContent(html_4c3f5aa6588ddec2bb7781a20a3d5187);
+            
+        
+
+        circle_marker_99feecd2055232d620fbeb42a6390788.bindPopup(popup_67635b41cc96e06547583b806ca4fc6d)
+        ;
+
+        
+    
+    
+            circle_marker_99feecd2055232d620fbeb42a6390788.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d4ae253744dd90729cb41ea0cdbc4043 = L.circleMarker(
+                [-22.749426139961205, -43.4361670545228],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_7f276013646759e5d7f46ebc81455c3d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2ef5f3f7ce6b942fb6ff956ad6307aec = $(`<div id="html_2ef5f3f7ce6b942fb6ff956ad6307aec" style="width: 100.0%; height: 100.0%;"><b>Imóvel #28</b><br>Tipo: Casa<br>Cidade: Nova Iguaçu<br>Valor: R$ 153.865,48</div>`)[0];
+                popup_7f276013646759e5d7f46ebc81455c3d.setContent(html_2ef5f3f7ce6b942fb6ff956ad6307aec);
+            
+        
+
+        circle_marker_d4ae253744dd90729cb41ea0cdbc4043.bindPopup(popup_7f276013646759e5d7f46ebc81455c3d)
+        ;
+
+        
+    
+    
+            circle_marker_d4ae253744dd90729cb41ea0cdbc4043.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9d391af3e0cbb1fcf17a899e6860fae8 = L.circleMarker(
+                [-22.75583925860627, -43.4359749165702],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_c5e321a49da580169bf30fab316b3056 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0cc3687a87cb89aaa9666405a34686b0 = $(`<div id="html_0cc3687a87cb89aaa9666405a34686b0" style="width: 100.0%; height: 100.0%;"><b>Imóvel #29</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 720.823,00</div>`)[0];
+                popup_c5e321a49da580169bf30fab316b3056.setContent(html_0cc3687a87cb89aaa9666405a34686b0);
+            
+        
+
+        circle_marker_9d391af3e0cbb1fcf17a899e6860fae8.bindPopup(popup_c5e321a49da580169bf30fab316b3056)
+        ;
+
+        
+    
+    
+            circle_marker_9d391af3e0cbb1fcf17a899e6860fae8.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c1825db69f11040144ae83286aa444c0 = L.circleMarker(
+                [-22.733940849950002, -43.54967594170907],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_92e717404218b4fcd044df64963b8c81 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f95ae496e0180b5333fee8546f9e1da5 = $(`<div id="html_f95ae496e0180b5333fee8546f9e1da5" style="width: 100.0%; height: 100.0%;"><b>Imóvel #30</b><br>Tipo: Terreno<br>Cidade: Queimados<br>Valor: R$ 644.800,14</div>`)[0];
+                popup_92e717404218b4fcd044df64963b8c81.setContent(html_f95ae496e0180b5333fee8546f9e1da5);
+            
+        
+
+        circle_marker_c1825db69f11040144ae83286aa444c0.bindPopup(popup_92e717404218b4fcd044df64963b8c81)
+        ;
+
+        
+    
+    
+            circle_marker_c1825db69f11040144ae83286aa444c0.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9231eeee565420c6014262c88785e04f = L.circleMarker(
+                [-22.769281212145803, -43.46965821253708],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_3fc633e51f294643d6ae63c5a32093f3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_91f118ccae0df18f781369a38e9951dc = $(`<div id="html_91f118ccae0df18f781369a38e9951dc" style="width: 100.0%; height: 100.0%;"><b>Imóvel #31</b><br>Tipo: Casa<br>Cidade: Nova Iguaçu<br>Valor: R$ 660.305,02</div>`)[0];
+                popup_3fc633e51f294643d6ae63c5a32093f3.setContent(html_91f118ccae0df18f781369a38e9951dc);
+            
+        
+
+        circle_marker_9231eeee565420c6014262c88785e04f.bindPopup(popup_3fc633e51f294643d6ae63c5a32093f3)
+        ;
+
+        
+    
+    
+            circle_marker_9231eeee565420c6014262c88785e04f.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_519b88804cd0947b23364c34d5dc4e9f = L.circleMarker(
+                [-22.699669364561334, -43.561031617015495],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_8bb54362c5d3042c42605fa4776116f5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d18f50a94b0c07422250696df2c10f27 = $(`<div id="html_d18f50a94b0c07422250696df2c10f27" style="width: 100.0%; height: 100.0%;"><b>Imóvel #32</b><br>Tipo: Casa<br>Cidade: Queimados<br>Valor: R$ 689.889,24</div>`)[0];
+                popup_8bb54362c5d3042c42605fa4776116f5.setContent(html_d18f50a94b0c07422250696df2c10f27);
+            
+        
+
+        circle_marker_519b88804cd0947b23364c34d5dc4e9f.bindPopup(popup_8bb54362c5d3042c42605fa4776116f5)
+        ;
+
+        
+    
+    
+            circle_marker_519b88804cd0947b23364c34d5dc4e9f.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_85964b8db85c11edf28f4d60f6738aa0 = L.circleMarker(
+                [-22.72641752437332, -43.54596177284519],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_ed7a30000a4f2a72f78fcd973d355daa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_db5203bc5b900c3c25a71b152fec938c = $(`<div id="html_db5203bc5b900c3c25a71b152fec938c" style="width: 100.0%; height: 100.0%;"><b>Imóvel #33</b><br>Tipo: Terreno<br>Cidade: Queimados<br>Valor: R$ 201.831,26</div>`)[0];
+                popup_ed7a30000a4f2a72f78fcd973d355daa.setContent(html_db5203bc5b900c3c25a71b152fec938c);
+            
+        
+
+        circle_marker_85964b8db85c11edf28f4d60f6738aa0.bindPopup(popup_ed7a30000a4f2a72f78fcd973d355daa)
+        ;
+
+        
+    
+    
+            circle_marker_85964b8db85c11edf28f4d60f6738aa0.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cc6e26ae1a6c1f01de905475bacb51a4 = L.circleMarker(
+                [-22.777306307674525, -43.43617338440285],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_b7f26b878cbf146df8343d7b392a67aa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eb738499f48b5f54e636616a077612b2 = $(`<div id="html_eb738499f48b5f54e636616a077612b2" style="width: 100.0%; height: 100.0%;"><b>Imóvel #34</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 400.926,01</div>`)[0];
+                popup_b7f26b878cbf146df8343d7b392a67aa.setContent(html_eb738499f48b5f54e636616a077612b2);
+            
+        
+
+        circle_marker_cc6e26ae1a6c1f01de905475bacb51a4.bindPopup(popup_b7f26b878cbf146df8343d7b392a67aa)
+        ;
+
+        
+    
+    
+            circle_marker_cc6e26ae1a6c1f01de905475bacb51a4.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_105745734d904b32a7613b76f26bf243 = L.circleMarker(
+                [-22.756632834383346, -43.436774814544094],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_b9f8fea4c7fbb0321d96cbfe86ddf435 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a2a454a0e0cbe3bbc71d4b1d49c70ffe = $(`<div id="html_a2a454a0e0cbe3bbc71d4b1d49c70ffe" style="width: 100.0%; height: 100.0%;"><b>Imóvel #35</b><br>Tipo: Terreno<br>Cidade: Nova Iguaçu<br>Valor: R$ 231.108,34</div>`)[0];
+                popup_b9f8fea4c7fbb0321d96cbfe86ddf435.setContent(html_a2a454a0e0cbe3bbc71d4b1d49c70ffe);
+            
+        
+
+        circle_marker_105745734d904b32a7613b76f26bf243.bindPopup(popup_b9f8fea4c7fbb0321d96cbfe86ddf435)
+        ;
+
+        
+    
+    
+            circle_marker_105745734d904b32a7613b76f26bf243.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_84b3bba393444ab125ab3e4ef5325e56 = L.circleMarker(
+                [-22.726860972753364, -43.44320746724854],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_dce90ab4a26f59d87ef620a0160b94eb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5702f1e7e2c226d9e36fae3b8ff1b3bd = $(`<div id="html_5702f1e7e2c226d9e36fae3b8ff1b3bd" style="width: 100.0%; height: 100.0%;"><b>Imóvel #36</b><br>Tipo: Apartamento<br>Cidade: Nova Iguaçu<br>Valor: R$ 754.172,40</div>`)[0];
+                popup_dce90ab4a26f59d87ef620a0160b94eb.setContent(html_5702f1e7e2c226d9e36fae3b8ff1b3bd);
+            
+        
+
+        circle_marker_84b3bba393444ab125ab3e4ef5325e56.bindPopup(popup_dce90ab4a26f59d87ef620a0160b94eb)
+        ;
+
+        
+    
+    
+            circle_marker_84b3bba393444ab125ab3e4ef5325e56.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8ea96ba35f655c9a60c4e971ef9200f6 = L.circleMarker(
+                [-22.72631778913954, -43.54931873415383],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_76ab2f5f6b47d1d776e04b91d072d088 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9bcdfa39251041ed3cbfa1b722e0e1dc = $(`<div id="html_9bcdfa39251041ed3cbfa1b722e0e1dc" style="width: 100.0%; height: 100.0%;"><b>Imóvel #37</b><br>Tipo: Apartamento<br>Cidade: Queimados<br>Valor: R$ 586.308,69</div>`)[0];
+                popup_76ab2f5f6b47d1d776e04b91d072d088.setContent(html_9bcdfa39251041ed3cbfa1b722e0e1dc);
+            
+        
+
+        circle_marker_8ea96ba35f655c9a60c4e971ef9200f6.bindPopup(popup_76ab2f5f6b47d1d776e04b91d072d088)
+        ;
+
+        
+    
+    
+            circle_marker_8ea96ba35f655c9a60c4e971ef9200f6.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f87329b2b819ecc414bdb3ffe8d2555a = L.circleMarker(
+                [-22.709114578103765, -43.571634401400196],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_695233bc5baabbb90fe01f16b64ac9f4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3394d8f6e21479f22788168ef4ea750e = $(`<div id="html_3394d8f6e21479f22788168ef4ea750e" style="width: 100.0%; height: 100.0%;"><b>Imóvel #38</b><br>Tipo: Apartamento<br>Cidade: Queimados<br>Valor: R$ 381.628,62</div>`)[0];
+                popup_695233bc5baabbb90fe01f16b64ac9f4.setContent(html_3394d8f6e21479f22788168ef4ea750e);
+            
+        
+
+        circle_marker_f87329b2b819ecc414bdb3ffe8d2555a.bindPopup(popup_695233bc5baabbb90fe01f16b64ac9f4)
+        ;
+
+        
+    
+    
+            circle_marker_f87329b2b819ecc414bdb3ffe8d2555a.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3d1a55e22bf0bd9a9ef018d54d2bd959 = L.circleMarker(
+                [-22.740302823080278, -43.48030227715432],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_5ba927f95c46bc59414bfadcf830a4c9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7fea691f1e0bd90aa6104d60ef319ef8 = $(`<div id="html_7fea691f1e0bd90aa6104d60ef319ef8" style="width: 100.0%; height: 100.0%;"><b>Imóvel #39</b><br>Tipo: Casa<br>Cidade: Nova Iguaçu<br>Valor: R$ 194.490,85</div>`)[0];
+                popup_5ba927f95c46bc59414bfadcf830a4c9.setContent(html_7fea691f1e0bd90aa6104d60ef319ef8);
+            
+        
+
+        circle_marker_3d1a55e22bf0bd9a9ef018d54d2bd959.bindPopup(popup_5ba927f95c46bc59414bfadcf830a4c9)
+        ;
+
+        
+    
+    
+            circle_marker_3d1a55e22bf0bd9a9ef018d54d2bd959.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f8544059aec85da96ad66aed0762013c = L.circleMarker(
+                [-22.771741747360455, -43.436086748688375],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_bdeca5db2568c7cfb886bdc39f0c3d84 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3d0277dfd11a79beff9a1cbd90071098 = $(`<div id="html_3d0277dfd11a79beff9a1cbd90071098" style="width: 100.0%; height: 100.0%;"><b>Imóvel #40</b><br>Tipo: Apartamento<br>Cidade: Nova Iguaçu<br>Valor: R$ 367.687,63</div>`)[0];
+                popup_bdeca5db2568c7cfb886bdc39f0c3d84.setContent(html_3d0277dfd11a79beff9a1cbd90071098);
+            
+        
+
+        circle_marker_f8544059aec85da96ad66aed0762013c.bindPopup(popup_bdeca5db2568c7cfb886bdc39f0c3d84)
+        ;
+
+        
+    
+    
+            circle_marker_f8544059aec85da96ad66aed0762013c.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0a65c56608a693210f1cbf54daacc73c = L.circleMarker(
+                [-22.706871346055525, -43.55074283761362],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_bf4b415c775818b2600b6767d9bcdcc4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6efb7c7610dac6b86c1a8d5689e7a9cc = $(`<div id="html_6efb7c7610dac6b86c1a8d5689e7a9cc" style="width: 100.0%; height: 100.0%;"><b>Imóvel #41</b><br>Tipo: Casa<br>Cidade: Queimados<br>Valor: R$ 377.628,33</div>`)[0];
+                popup_bf4b415c775818b2600b6767d9bcdcc4.setContent(html_6efb7c7610dac6b86c1a8d5689e7a9cc);
+            
+        
+
+        circle_marker_0a65c56608a693210f1cbf54daacc73c.bindPopup(popup_bf4b415c775818b2600b6767d9bcdcc4)
+        ;
+
+        
+    
+    
+            circle_marker_0a65c56608a693210f1cbf54daacc73c.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d089b13d8a67286b52f5ddce63348d1b = L.circleMarker(
+                [-22.763933012036844, -43.489448176903004],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_5109a8e0e790980e8497d79a7a00b667 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ccd9af00de88f2cb9612930bf28b06ea = $(`<div id="html_ccd9af00de88f2cb9612930bf28b06ea" style="width: 100.0%; height: 100.0%;"><b>Imóvel #42</b><br>Tipo: Casa<br>Cidade: Nova Iguaçu<br>Valor: R$ 660.724,32</div>`)[0];
+                popup_5109a8e0e790980e8497d79a7a00b667.setContent(html_ccd9af00de88f2cb9612930bf28b06ea);
+            
+        
+
+        circle_marker_d089b13d8a67286b52f5ddce63348d1b.bindPopup(popup_5109a8e0e790980e8497d79a7a00b667)
+        ;
+
+        
+    
+    
+            circle_marker_d089b13d8a67286b52f5ddce63348d1b.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bba2c4ee385370e843470d594136bd96 = L.circleMarker(
+                [-22.71070776677626, -43.570941138285356],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_f8e144a3c282bb4c36e4744a9250a741 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d18b7f5c07b8b911c6f5ec795d6f25ad = $(`<div id="html_d18b7f5c07b8b911c6f5ec795d6f25ad" style="width: 100.0%; height: 100.0%;"><b>Imóvel #43</b><br>Tipo: Apartamento<br>Cidade: Queimados<br>Valor: R$ 596.290,23</div>`)[0];
+                popup_f8e144a3c282bb4c36e4744a9250a741.setContent(html_d18b7f5c07b8b911c6f5ec795d6f25ad);
+            
+        
+
+        circle_marker_bba2c4ee385370e843470d594136bd96.bindPopup(popup_f8e144a3c282bb4c36e4744a9250a741)
+        ;
+
+        
+    
+    
+            circle_marker_bba2c4ee385370e843470d594136bd96.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_05197ad2437555b8937468f30969a5db = L.circleMarker(
+                [-22.747988217354347, -43.45018989385352],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_7217036a9ac237f22e4d6613e4b4fde8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_36e4a9dd750200e1449401e78fb6bd27 = $(`<div id="html_36e4a9dd750200e1449401e78fb6bd27" style="width: 100.0%; height: 100.0%;"><b>Imóvel #44</b><br>Tipo: Apartamento<br>Cidade: Nova Iguaçu<br>Valor: R$ 771.048,92</div>`)[0];
+                popup_7217036a9ac237f22e4d6613e4b4fde8.setContent(html_36e4a9dd750200e1449401e78fb6bd27);
+            
+        
+
+        circle_marker_05197ad2437555b8937468f30969a5db.bindPopup(popup_7217036a9ac237f22e4d6613e4b4fde8)
+        ;
+
+        
+    
+    
+            circle_marker_05197ad2437555b8937468f30969a5db.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_619484ba26adc6a26b7dc9ef86eba418 = L.circleMarker(
+                [-22.71456901263701, -43.57479753664615],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_2f4d81d4634a3c283871e2d98912107d);
+        
+    
+        var popup_54e23ec2e2d9760fb288e807b67b29eb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6a64e04e2c729cdb6f6967ff1ffdff46 = $(`<div id="html_6a64e04e2c729cdb6f6967ff1ffdff46" style="width: 100.0%; height: 100.0%;"><b>Imóvel #45</b><br>Tipo: Apartamento<br>Cidade: Queimados<br>Valor: R$ 480.550,45</div>`)[0];
+                popup_54e23ec2e2d9760fb288e807b67b29eb.setContent(html_6a64e04e2c729cdb6f6967ff1ffdff46);
+            
+        
+
+        circle_marker_619484ba26adc6a26b7dc9ef86eba418.bindPopup(popup_54e23ec2e2d9760fb288e807b67b29eb)
+        ;
+
+        
+    
+    
+            circle_marker_619484ba26adc6a26b7dc9ef86eba418.bindTooltip(
+                `<div>
+                     Clique para detalhes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
