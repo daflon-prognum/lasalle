@@ -1,0 +1,97 @@
+Data,Pedido,Categoria,Produto,Quantidade,Receita
+2026-01-03,PED-1001,Eletrônicos,Notebook,1,3056.0
+2026-01-05,PED-1002,Móveis,Mesa,2,2425.0
+2026-01-07,PED-1003,Papelaria,Pasta,3,65.01
+2026-01-10,PED-1004,Acessórios,Hub USB,4,480.0
+2026-01-12,PED-1005,Eletrônicos,Notebook,1,3248.0
+2026-01-15,PED-1006,Móveis,Estante,2,1483.2
+2026-01-17,PED-1007,Papelaria,Pasta,3,68.97
+2026-01-20,PED-1008,Acessórios,Hub USB,4,458.4
+2026-01-22,PED-1009,Eletrônicos,Notebook,1,3104.0
+2026-01-25,PED-1010,Móveis,Cadeira Escritório,2,1930.6
+2026-01-27,PED-1011,Papelaria,Pasta,3,66.0
+2026-01-30,PED-1012,Acessórios,Hub USB,4,487.2
+2026-02-01,PED-1013,Eletrônicos,Notebook,1,3296.0
+2026-02-04,PED-1014,Móveis,Mesa,2,2612.5
+2026-02-06,PED-1015,Papelaria,Pasta,3,63.03
+2026-02-09,PED-1016,Acessórios,Hub USB,4,465.6
+2026-02-11,PED-1017,Eletrônicos,Notebook,1,3152.0
+2026-02-14,PED-1018,Móveis,Estante,2,1440.0
+2026-02-16,PED-1019,Papelaria,Pasta,3,66.99
+2026-02-19,PED-1020,Acessórios,Hub USB,4,494.4
+2026-02-21,PED-1021,Eletrônicos,Notebook,1,3344.0
+2026-02-24,PED-1022,Móveis,Cadeira Escritório,2,1871.8
+2026-02-26,PED-1023,Papelaria,Pasta,3,64.02
+2026-03-01,PED-1024,Acessórios,Hub USB,4,472.8
+2026-03-03,PED-1025,Eletrônicos,Notebook,1,3200.0
+2026-03-06,PED-1026,Móveis,Mesa,2,2537.5
+2026-03-08,PED-1027,Papelaria,Pasta,3,67.98
+2026-03-11,PED-1028,Acessórios,Hub USB,4,501.6
+2026-03-13,PED-1029,Eletrônicos,Notebook,1,3056.0
+2026-03-16,PED-1030,Móveis,Estante,2,1396.8
+2026-03-18,PED-1031,Papelaria,Pasta,3,65.01
+2026-03-21,PED-1032,Acessórios,Hub USB,4,480.0
+2026-03-23,PED-1033,Eletrônicos,Notebook,1,3248.0
+2026-03-26,PED-1034,Móveis,Cadeira Escritório,2,2018.8
+2026-03-28,PED-1035,Papelaria,Pasta,3,68.97
+2026-03-31,PED-1036,Acessórios,Hub USB,4,458.4
+2026-04-02,PED-1037,Eletrônicos,Notebook,1,3104.0
+2026-04-05,PED-1038,Móveis,Mesa,2,2462.5
+2026-04-07,PED-1039,Papelaria,Pasta,3,66.0
+2026-04-10,PED-1040,Acessórios,Hub USB,4,487.2
+2026-04-12,PED-1041,Eletrônicos,Notebook,1,3296.0
+2026-04-15,PED-1042,Móveis,Estante,2,1504.8
+2026-04-17,PED-1043,Papelaria,Pasta,3,63.03
+2026-04-20,PED-1044,Acessórios,Hub USB,4,465.6
+2026-04-22,PED-1045,Eletrônicos,Notebook,1,3152.0
+2026-04-25,PED-1046,Móveis,Cadeira Escritório,2,1960.0
+2026-04-27,PED-1047,Papelaria,Pasta,3,66.99
+2026-04-30,PED-1048,Acessórios,Hub USB,4,494.4
+2026-05-02,PED-1049,Eletrônicos,Notebook,1,3344.0
+2026-05-05,PED-1050,Móveis,Mesa,2,2387.5
+2026-05-07,PED-1051,Papelaria,Pasta,3,64.02
+2026-05-10,PED-1052,Acessórios,Hub USB,4,472.8
+2026-05-12,PED-1053,Eletrônicos,Notebook,1,3200.0
+2026-05-15,PED-1054,Móveis,Estante,2,1461.6
+2026-05-17,PED-1055,Papelaria,Pasta,3,67.98
+2026-05-20,PED-1056,Acessórios,Hub USB,4,501.6
+2026-05-22,PED-1057,Eletrônicos,Notebook,1,3056.0
+2026-05-25,PED-1058,Móveis,Cadeira Escritório,2,1901.2
+2026-05-27,PED-1059,Papelaria,Pasta,3,65.01
+2026-05-30,PED-1060,Acessórios,Hub USB,4,480.0
+2026-06-01,PED-1061,Eletrônicos,Notebook,1,3248.0
+2026-06-04,PED-1062,Móveis,Mesa,2,2575.0
+2026-06-06,PED-1063,Papelaria,Pasta,3,68.97
+2026-06-09,PED-1064,Acessórios,Hub USB,4,458.4
+2026-06-11,PED-1065,Eletrônicos,Notebook,1,3104.0
+2026-06-14,PED-1066,Móveis,Estante,2,1418.4
+2026-06-16,PED-1067,Papelaria,Pasta,3,66.0
+2026-06-19,PED-1068,Acessórios,Hub USB,4,487.2
+2026-06-21,PED-1069,Eletrônicos,Notebook,1,3296.0
+2026-06-24,PED-1070,Móveis,Cadeira Escritório,2,2048.2
+2026-06-26,PED-1071,Papelaria,Pasta,3,63.03
+2026-06-29,PED-1072,Acessórios,Hub USB,4,465.6
+2026-07-01,PED-1073,Eletrônicos,Notebook,1,3152.0
+2026-07-04,PED-1074,Móveis,Mesa,2,2500.0
+2026-07-06,PED-1075,Papelaria,Pasta,3,66.99
+2026-07-09,PED-1076,Acessórios,Hub USB,4,494.4
+2026-07-11,PED-1077,Eletrônicos,Notebook,1,3344.0
+2026-07-14,PED-1078,Móveis,Estante,2,1375.2
+2026-07-16,PED-1079,Papelaria,Pasta,3,64.02
+2026-07-19,PED-1080,Acessórios,Hub USB,4,472.8
+2026-07-21,PED-1081,Eletrônicos,Notebook,1,3200.0
+2026-07-24,PED-1082,Móveis,Cadeira Escritório,2,1989.4
+2026-07-26,PED-1083,Papelaria,Pasta,3,67.98
+2026-07-29,PED-1084,Acessórios,Hub USB,4,501.6
+2026-07-31,PED-1085,Eletrônicos,Notebook,1,3056.0
+2026-08-03,PED-1086,Móveis,Mesa,2,2425.0
+2026-08-05,PED-1087,Papelaria,Pasta,3,65.01
+2026-08-08,PED-1088,Acessórios,Hub USB,4,480.0
+2026-08-10,PED-1089,Eletrônicos,Notebook,1,3248.0
+2026-08-13,PED-1090,Móveis,Estante,2,1483.2
+2026-08-15,PED-1091,Papelaria,Pasta,3,68.97
+2026-08-18,PED-1092,Acessórios,Hub USB,4,458.4
+2026-08-20,PED-1093,Eletrônicos,Notebook,1,3104.0
+2026-08-23,PED-1094,Móveis,Cadeira Escritório,2,1930.6
+2026-08-25,PED-1095,Papelaria,Pasta,3,66.0
+2026-08-28,PED-1096,Acessórios,Hub USB,4,487.2
