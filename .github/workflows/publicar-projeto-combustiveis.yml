@@ -1,0 +1,37 @@
+name: Publicar pagina do projeto de combustiveis
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'projeto-precos-combustiveis/**'
+      - '.github/workflows/publicar-projeto-combustiveis.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/configure-pages@v5
+      - name: Preparar apenas a pagina e seus arquivos de apoio
+        run: |
+          mkdir -p _site/projeto-precos-combustiveis
+          cp projeto-precos-combustiveis/index.html _site/projeto-precos-combustiveis/
+          cp -r projeto-precos-combustiveis/imagens _site/projeto-precos-combustiveis/
+          cp -r projeto-precos-combustiveis/documentacao _site/projeto-precos-combustiveis/
+          printf '<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=projeto-precos-combustiveis/"><title>Projeto G1</title><a href="projeto-precos-combustiveis/">Abrir projeto G1</a></html>' > _site/index.html
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - uses: actions/deploy-pages@v4
+        id: deploy
