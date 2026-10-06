@@ -1,0 +1,49 @@
+{
+  "data": "2026-10-06",
+  "aluno": "Guilherme Daflon Goulart Costa",
+  "tema": 11,
+  "fonte": "https://github.com/AlexandreLouzada/Dados-Simulados-G1",
+  "arquivo": "simulacao_precos_combustiveis_brasil.csv",
+  "csv_sha256": "a6821f127dbc40fa9c01c5844240b52a17305aef2b172cc984047938393fd2c8",
+  "observacoes": 4440,
+  "colunas_originais": 14,
+  "ufs": 20,
+  "combustiveis": 5,
+  "valores_ausentes": 0,
+  "linhas_inteiras_duplicadas": 0,
+  "ocorrencias_adicionais_por_chave": 503,
+  "notebook": {
+    "celulas": 29,
+    "codigo": 13,
+    "saidas": 33,
+    "erros": 0,
+    "graficos_png": 8
+  },
+  "execucao_local": {
+    "python": "3.12.14",
+    "bibliotecas": {
+      "pandas": "2.3.3",
+      "numpy": "2.5.3",
+      "matplotlib": "3.11.2",
+      "seaborn": "0.13.2",
+      "streamlit": "1.65.0",
+      "SQLAlchemy": "2.1.3"
+    }
+  },
+  "publicacao": {
+    "commit_inicial": "d037dcd",
+    "pagina": "https://daflon-prognum.github.io/lasalle/projeto-precos-combustiveis/",
+    "dashboard": "https://lasalle-combustiveis-g1.streamlit.app/",
+    "workflow_inicial": "https://github.com/daflon-prognum/lasalle/actions/runs/37484444105",
+    "python_cloud": "3.12"
+  },
+  "conferencias_interface": [
+    "Gasolina completa: R$ 5,53; SP; Sul; 38,05% em 10/2020",
+    "Diesel completo: 892 observacoes; R$ 5,44",
+    "Diesel Sudeste: 315 observacoes; 4 UFs",
+    "Selecao vazia: mensagem sem erro",
+    "Abas da nuvem: Evolucao, UFs e combustiveis, Associacoes",
+    "Aba Dados e metodo na nuvem: tabela, exportacao e explicacao",
+    "Notebook do GitHub aberto no Colab com as saidas salvas"
+  ]
+}

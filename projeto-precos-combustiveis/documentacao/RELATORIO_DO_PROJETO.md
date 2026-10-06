@@ -95,10 +95,12 @@ Essa correspondência demonstra onde cada item foi implementado; não antecipa a
 
 - Notebook: 13 células de código executadas em sequência, 33 saídas salvas, incluindo os oito gráficos.
 - SQLite: 4.440 observações importadas e lidas por SQLAlchemy; a base original foi preservada.
-- Dashboard: executado localmente, com valores de referência conferidos na interface.
-- Publicação: status e links finais registrados abaixo após o deploy.
+- Dashboard: executado localmente e no Streamlit Cloud, com os indicadores de gasolina conferidos. Na execução local, a troca para diesel, o recorte Sudeste e a seleção vazia foram conferidos; na nuvem, também foram abertas as abas de comparação e associações.
+- GitHub: código enviado à branch main; commit inicial d037dcd.
+- GitHub Pages: workflow concluído com sucesso; página pública aberta com imagens e links.
+- Streamlit Cloud: novo aplicativo publicado com Python 3.12; URL pública aberta e indicadores exibidos.
 
-Links previstos da entrega:
+Links da entrega:
 
 - GitHub: https://github.com/daflon-prognum/lasalle/tree/main/projeto-precos-combustiveis
 - Página: https://daflon-prognum.github.io/lasalle/projeto-precos-combustiveis/

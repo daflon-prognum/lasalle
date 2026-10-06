@@ -108,7 +108,8 @@ with aba_lugares:
     st.caption('Esta comparação mantém ano, mês, região, UF e nível de preço. O filtro de combustível é aberto apenas neste gráfico.')
     mostrar(barras(contexto, 'combustivel', 'Preço médio registrado por combustível'))
     combustiveis = ranking(contexto, 'combustivel')
-    st.write(f'O maior valor médio registrado é de {combustiveis.index[0]}: {moeda(combustiveis.iloc[0].preco_medio)}.')
+    st.metric('Combustível com maior valor médio registrado', combustiveis.index[0])
+    st.caption(moeda(combustiveis.iloc[0].preco_medio))
     st.warning('A fonte não informa uma unidade física comum. O gráfico não permite concluir qual combustível oferece mais economia.')
     anual = contexto.groupby(['ano', 'combustivel']).preco_medio.mean().unstack('combustivel')
     if len(anual) > 1:
