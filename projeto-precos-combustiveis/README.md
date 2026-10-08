@@ -1,7 +1,10 @@
 # Combustíveis no Brasil
 
 **Evolução dos preços e diferenças entre UFs, de 2015 a 2024**  
-Guilherme Daflon Goulart Costa · Linguagens de Programação · Projeto G1 · Tema 11  
+**Disciplina:** Linguagens de Programação  
+**Professor:** Alexandre Neves Louzada  
+**Aluno:** Guilherme Daflon Goulart Costa  
+Projeto G1 · Tema 11  
 Apresentação presencial: **08/10/2026**.
 
 ## Acessos
@@ -16,7 +19,7 @@ Apresentação presencial: **08/10/2026**.
 
 Como os preços variaram entre 2015 e 2024 e quais UFs, regiões e períodos apresentaram as maiores médias e oscilações na base simulada?
 
-A base do [professor Alexandre Louzada](https://github.com/AlexandreLouzada/Dados-Simulados-G1) tem **4.440 registros, 14 colunas, 20 UFs, cinco regiões e cinco combustíveis**. O CSV original está em `dados/`, sem alteração.
+A base do [professor Alexandre Neves Louzada](https://github.com/AlexandreLouzada/Dados-Simulados-G1) tem **4.440 registros, 14 colunas, 20 UFs, cinco regiões e cinco combustíveis**. O CSV original está em `dados/`, sem alteração.
 
 ## Resultados de referência
 

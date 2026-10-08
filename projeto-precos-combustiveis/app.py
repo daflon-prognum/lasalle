@@ -28,7 +28,7 @@ except (ValueError, OSError) as erro:
 st.caption('G1 · LINGUAGENS DE PROGRAMAÇÃO · TEMA 11')
 st.title('Combustíveis no Brasil')
 st.markdown('**Evolução dos preços e diferenças entre UFs, de 2015 a 2024**')
-st.caption('Guilherme Daflon Goulart Costa · Base simulada fornecida pelo professor Alexandre Louzada')
+st.caption('Aluno: Guilherme Daflon Goulart Costa · Professor: Alexandre Neves Louzada')
 st.write('Onde estão os maiores preços e em quais períodos as médias mais oscilaram? Escolha um combustível e explore o recorte.')
 st.info('Dados simulados de 20 UFs. Os preços são médias das observações; as unidades físicas não foram documentadas na fonte.')
 
