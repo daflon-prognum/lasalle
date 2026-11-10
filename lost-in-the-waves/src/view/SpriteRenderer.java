@@ -282,40 +282,76 @@ public final class SpriteRenderer {
 		}
 	}
 
-	public static void drawItem(Graphics2D g, Item item) {
+	/**
+	 * Itens desenhados como objetos reconheciveis boiando na agua (sem caixa escura em volta):
+	 * coco, garrafa de agua, moeda de ouro girando e bolha de escudo.
+	 */
+	public static void drawItem(Graphics2D g, Item item, int tick) {
 		int left = (int) item.getX();
-		int y = (int) item.getY();
+		int y = (int) item.getY() + (int) Math.round(Math.sin(tick * 0.12 + left * 0.05) * 2);
 		int size = Item.SIZE;
-		switch (item.getType()) {
-		case BALL:
-			g.drawImage(Assets.BALL, left - 3, y - 3, size + 6, size + 6, null);
-			return;
-		default:
-			g.setColor(new Color(0x183754));
-			g.fillRoundRect(left, y, size, size, 8, 8);
-		}
+		// brilho suave em volta para destacar o item no mar (inclusive na tempestade)
+		g.setColor(new Color(0x55FFF6C8, true));
+		g.fillOval(left - 5, y - 5, size + 10, size + 10);
 		switch (item.getType()) {
 		case WATER:
-			g.setColor(new Color(0x69E7FF));
-			g.fillRect(left + 8, y + 7, 8, 12);
-			g.fillRect(left + 10, y + 4, 4, 3);
+			g.setColor(new Color(0x1E4E8C));
+			g.fillRect(left + 9, y + 1, 6, 4); // tampa
+			g.setColor(new Color(0xBFEFFF));
+			g.fillRect(left + 10, y + 5, 4, 3); // gargalo
+			g.fillRoundRect(left + 6, y + 8, 12, 15, 4, 4); // garrafa
+			g.setColor(new Color(0x3FB6F0));
+			g.fillRoundRect(left + 7, y + 13, 10, 9, 3, 3); // agua dentro
+			g.setColor(new Color(0xFFFFFF));
+			g.fillRect(left + 8, y + 9, 2, 6); // reflexo
+			g.setColor(new Color(0xE84855));
+			g.fillRect(left + 6, y + 12, 12, 2); // rotulo
 			break;
 		case SHIELD:
+			g.setColor(new Color(0x7FA0F1AA, true));
+			g.fillOval(left, y, size, size);
 			g.setColor(new Color(0xA0F1AA));
-			g.fillPolygon(new int[] { left + 5, left + 19, left + 17, left + 12, left + 7 },
-					new int[] { y + 6, y + 6, y + 15, y + 20, y + 15 }, 5);
+			g.setStroke(new BasicStroke(2));
+			g.drawOval(left, y, size, size);
+			g.setStroke(new BasicStroke(1));
+			g.setColor(new Color(0x2E7D4F));
+			g.fillPolygon(new int[] { left + 6, left + 18, left + 17, left + 12, left + 7 },
+					new int[] { y + 6, y + 6, y + 14, y + 19, y + 14 }, 5);
+			g.setColor(new Color(0xFFFFFF));
+			g.fillRect(left + 5, y + 4, 3, 3);
 			break;
 		case COIN:
+			int w = Math.max(3, (int) Math.round(Math.abs(Math.cos(tick * 0.09)) * 18));
+			int cx = left + size / 2;
+			g.setColor(new Color(0xB9771F));
+			g.fillOval(cx - w / 2, y + 3, w, 18);
 			g.setColor(new Color(0xFFD166));
-			g.fillOval(left + 5, y + 5, 14, 14);
-			g.setColor(new Color(0x9E622C));
-			g.drawOval(left + 8, y + 8, 8, 8);
+			g.fillOval(cx - w / 2 + 1, y + 3, Math.max(2, w - 3), 16);
+			if (w > 8) {
+				g.setColor(new Color(0xB9771F));
+				g.fillRect(cx - 1, y + 7, 3, 9);
+				g.setColor(new Color(0xFFF4C2));
+				g.fillRect(cx - w / 2 + 3, y + 6, 2, 4);
+			}
 			break;
-		default: // COCONUT
-			g.setColor(new Color(0xAE774B));
-			g.fillOval(left + 5, y + 5, 14, 14);
-			g.setColor(new Color(0x593726));
-			g.drawOval(left + 8, y + 8, 8, 8);
+		default: // COCO
+			g.setColor(new Color(0x6E4426));
+			g.fillOval(left + 3, y + 5, 18, 17);
+			g.setColor(new Color(0x9C6A3E));
+			g.fillOval(left + 6, y + 7, 9, 7);
+			g.setColor(new Color(0x2E1B10));
+			g.fillRect(left + 9, y + 10, 2, 2);
+			g.fillRect(left + 13, y + 10, 2, 2);
+			g.fillRect(left + 11, y + 14, 2, 2);
+			g.setColor(new Color(0x4CAF50)); // folhinha
+			g.fillPolygon(new int[] { left + 12, left + 20, left + 15 }, new int[] { y + 5, y, y + 6 }, 3);
 		}
+	}
+
+	/** Bola de praia (imagem fornecida pelo grupo) parada na areia, com sombra. */
+	public static void drawBeachBall(Graphics2D g, int x, int base, int size) {
+		g.setColor(new Color(0x45A0752F, true));
+		g.fillOval(x - 2, base - 4, size + 4, 8);
+		g.drawImage(Assets.BALL, x, base - size, size, size, null);
 	}
 }

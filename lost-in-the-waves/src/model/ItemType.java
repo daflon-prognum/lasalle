@@ -5,8 +5,7 @@ public enum ItemType {
 	COCONUT("Coco", 25, 0, false),
 	WATER("Agua", 15, 0, false),
 	COIN("Moeda", 0, 100, true),
-	SHIELD("Escudo", 0, 0, false),
-	BALL("Bola de praia", 0, 250, true);
+	SHIELD("Escudo", 0, 0, false);
 
 	private final String label;
 	private final int energy;

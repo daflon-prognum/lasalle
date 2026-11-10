@@ -24,10 +24,9 @@ public class GameModel {
 	private static final int BEACH_DISTANCE = 540;
 
 	private static final Stage[] STAGES = {
-			new Stage("Mar Aberto", 5.0, 104, ObstacleType.ROCK, ObstacleType.LOG, ObstacleType.GULL, ObstacleType.BUOY),
-			new Stage("Águas Perigosas", 6.4, 91, ObstacleType.SHARK, ObstacleType.GULL, ObstacleType.WHALE, ObstacleType.LOG),
-			new Stage("Tempestade", 7.7, 82, ObstacleType.WHIRLPOOL, ObstacleType.WAVE, ObstacleType.GULL, ObstacleType.SHARK),
-			new Stage("A Última Onda", 9.0, 75, ObstacleType.WAVE, ObstacleType.WHALE, ObstacleType.GULL, ObstacleType.WHIRLPOOL, ObstacleType.SHARK) };
+			new Stage("Mar Aberto", 5.0, 104, ObstacleType.ROCK, ObstacleType.LOG, ObstacleType.GULL, ObstacleType.BUOY, ObstacleType.SHARK),
+			new Stage("Tempestade", 7.0, 86, ObstacleType.WHIRLPOOL, ObstacleType.WAVE, ObstacleType.GULL, ObstacleType.SHARK, ObstacleType.WHALE),
+			new Stage("A Última Onda", 8.6, 76, ObstacleType.WAVE, ObstacleType.WHALE, ObstacleType.GULL, ObstacleType.WHIRLPOOL, ObstacleType.SHARK) };
 
 	private final Surfer surfer = new Surfer();
 	private final List<Obstacle> obstacles = new ArrayList<>();
@@ -302,7 +301,7 @@ public class GameModel {
 	}
 
 	public boolean isStormy() {
-		return level >= 3 && getDistance() < BEACH_DISTANCE + 5;
+		return level >= 2 && getDistance() < BEACH_DISTANCE + 5;
 	}
 
 	public boolean isBeachVisible() {

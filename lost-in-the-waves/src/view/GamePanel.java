@@ -103,7 +103,7 @@ public class GamePanel extends JPanel {
 			SpriteRenderer.drawObstacle(g, obstacle, model.getTicks());
 		}
 		for (Item item : model.getItems()) {
-			SpriteRenderer.drawItem(g, item);
+			SpriteRenderer.drawItem(g, item, model.getTicks());
 		}
 		if (model.isSurferVisible()) {
 			drawSurfer(g);
@@ -349,6 +349,7 @@ public class GamePanel extends JPanel {
 		final int hop = 24;
 		final int walk = 96;
 		drawCrab(g, t);
+		SpriteRenderer.drawBeachBall(g, 212, 440, 34);
 		double wash = Math.max(0, Math.min(1, (t - arrive - hop) / 60.0));
 		if (t < arrive) {
 			// vem do horizonte em direcao a praia, crescendo conforme se aproxima
@@ -579,6 +580,7 @@ public class GamePanel extends JPanel {
 		g.fillOval(shore + 236, 402, 74, 12);
 		g.drawImage(Assets.PALM, shore + 244, 294, 54, 116, null);
 		drawUmbrella(g, shore + 420, 418);
+		SpriteRenderer.drawBeachBall(g, shore + 150, 432, 30);
 		g.drawImage(Assets.CRAB, (int) (shore + 360 + Math.sin(t * 0.05) * 22), 412, 35, 24, null);
 	}
 

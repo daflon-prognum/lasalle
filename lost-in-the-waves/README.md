@@ -39,7 +39,7 @@ O menu **Ajuda** mostra os controles e os créditos.
 
 ## Regras
 
-- 4 fases de 600 m: **Mar Aberto**, **Águas Perigosas**, **Tempestade** e **A Última Onda**.
+- 3 fases de 600 m: **Mar Aberto**, **Tempestade** e **A Última Onda**.
   Cada fase é mais rápida que a anterior e a praia aparece no fim da última.
 - Colidir com um obstáculo tira 25 de energia. Com energia 0 é **game over**; ao tentar
   de novo, a fase recomeça com energia cheia e a pontuação do início da fase.
@@ -47,10 +47,11 @@ O menu **Ajuda** mostra os controles e os créditos.
   até a beira, pula da prancha para a areia, caminha até a toalha e comemora.
   A caminhada é montada recortando as pernas do sprite e movendo cada uma alternadamente.
 - Na reta final da última fase a praia surge com água rasa, espuma indo e voltando,
-  areia molhada, vegetação, coqueiro, guarda-sol e caranguejo.
-- Pontuação: distância percorrida, desvios (com bônus de combo), moedas (100) e bola de praia (250).
-- Itens: **coco** (+25 energia), **água** (+15 energia), **moeda**, **bola de praia** e
-  **escudo** (absorve um impacto ou expira após ~6 s).
+  areia molhada, vegetação, coqueiro, guarda-sol, bola de praia e caranguejo.
+- Pontuação: distância percorrida, desvios (com bônus de combo) e moedas (100).
+- Itens (boiando no mar, com um brilho em volta): **coco** (+25 energia), **garrafa de água**
+  (+15 energia), **moeda** (gira) e **escudo** (absorve um impacto ou expira após ~6 s).
+- A bola de praia enviada pelo grupo enfeita a areia, na praia da última fase e na cena final.
 - Obstáculos (desenhados em pixel art no SpriteRenderer): rocha, boia, tronco, gaivota (voa baixo, com sombra na água: agache para
   passar por baixo), tubarão (mais rápido, com barbatana e marola), baleia, onda (quebrando, com espuma e
   respingos animados) e redemoinho (puxa a surfista para o centro).
