@@ -45,6 +45,9 @@ O menu **Ajuda** mostra os controles e os créditos.
   de novo, a fase recomeça com energia cheia e a pontuação do início da fase.
 - Chegar à praia na última fase é a **vitória**: na cena final animada ela surfa do horizonte
   até a beira, pula da prancha para a areia, caminha até a toalha e comemora.
+  A caminhada é montada recortando as pernas do sprite e movendo cada uma alternadamente.
+- Na reta final da última fase a praia surge com água rasa, espuma indo e voltando,
+  areia molhada, vegetação, coqueiro, guarda-sol e caranguejo.
 - Pontuação: distância percorrida, desvios (com bônus de combo), moedas (100) e bola de praia (250).
 - Itens: **coco** (+25 energia), **água** (+15 energia), **moeda**, **bola de praia** e
   **escudo** (absorve um impacto ou expira após ~6 s).

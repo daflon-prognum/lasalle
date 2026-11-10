@@ -4,6 +4,7 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
@@ -346,7 +347,7 @@ public class GamePanel extends JPanel {
 	private void drawEnding(Graphics2D g, int t) {
 		final int arrive = 100;
 		final int hop = 24;
-		final int walk = 80;
+		final int walk = 96;
 		drawCrab(g, t);
 		double wash = Math.max(0, Math.min(1, (t - arrive - hop) / 60.0));
 		if (t < arrive) {
@@ -374,6 +375,7 @@ public class GamePanel extends JPanel {
 		}
 		double x;
 		double feet;
+		double step = -1;
 		if (t < arrive + hop) {
 			double p = (t - arrive) / (double) hop;
 			x = 290 + 60 * p;
@@ -384,7 +386,8 @@ public class GamePanel extends JPanel {
 		} else if (t < arrive + hop + walk) {
 			double p = (t - arrive - hop) / (double) walk;
 			x = 350 + 120 * p;
-			feet = SAND_FEET - Math.abs(Math.sin(t * 0.3)) * 4;
+			feet = SAND_FEET;
+			step = (t - arrive - hop) * 0.24;
 			drawSandPuff(g, 350 + Surfer.WIDTH / 2, t - arrive - hop + 4);
 		} else {
 			int c = t - arrive - hop - walk;
@@ -399,7 +402,40 @@ public class GamePanel extends JPanel {
 		if (t > arrive + hop * 2 / 3) {
 			drawShadow(g, (int) x, SAND_FEET + 2);
 		}
-		g.drawImage(PERSON, (int) x, (int) feet - PERSON_H, Surfer.WIDTH, PERSON_H, null);
+		drawWalker(g, x, feet, step);
+	}
+
+	/**
+	 * Surfista a pe (sem prancha). O sprite so tem a pose em pe, entao a caminhada e montada
+	 * recortando as pernas: cada perna avanca e levanta alternadamente e o corpo sobe e desce.
+	 * step negativo = parada.
+	 */
+	private void drawWalker(Graphics2D g, double x, double feet, double step) {
+		BufferedImage sprite = Assets.SURFER;
+		final int hip = 290;
+		final int sole = 385;
+		final int split = 209;
+		double sx = Surfer.WIDTH / (double) sprite.getWidth();
+		double sy = Surfer.HEIGHT / (double) sprite.getHeight();
+		double s = step < 0 ? 0 : Math.sin(step);
+		double bob = step < 0 ? 0 : -Math.abs(Math.cos(step)) * 2.5;
+		int top = (int) Math.round(feet - sole * sy);
+		int hipY = (int) Math.round(feet - (sole - hip) * sy);
+		int splitX = (int) Math.round(x + split * sx);
+		int right = (int) Math.round(x + Surfer.WIDTH);
+		// perna de tras (esquerda na tela) e perna da frente (direita)
+		int backDx = (int) Math.round(5 * s);
+		int backLift = (int) Math.round(-Math.max(0, -s) * 5);
+		int frontDx = (int) Math.round(-5 * s);
+		int frontLift = (int) Math.round(-Math.max(0, s) * 5);
+		int b = (int) Math.round(bob);
+		g.drawImage(sprite, (int) x + backDx, hipY + backLift + b, splitX + backDx, (int) feet + backLift, 0, hip, split, sole, null);
+		g.drawImage(sprite, splitX + frontDx, hipY + frontLift + b, right + frontDx, (int) feet + frontLift, split, hip,
+				sprite.getWidth(), sole, null);
+		// tronco, bracos e cabeca por cima, acompanhando o balanco
+		int overlap = 2; // cobre a emenda entre quadril e pernas
+		g.drawImage(sprite, (int) x, top + b, right, hipY + b + overlap, 0, 0, sprite.getWidth(),
+				hip + (int) Math.round(overlap / sy), null);
 	}
 
 	private void drawShadow(Graphics2D g, int x, int y) {
@@ -476,33 +512,123 @@ public class GamePanel extends JPanel {
 		}
 	}
 
+	// ------------------------------------------------------------------
+	// Praia que aparece no fim da ultima fase
+	// ------------------------------------------------------------------
+
+	private static final int HORIZON = 284;
+
+	/** Posicao x da beira da agua na altura y (diagonal com leve ondulacao). */
+	private static double shoreEdge(int shore, int y) {
+		return shore + 160 - (y - HORIZON) * 185.0 / (H - HORIZON) + 7 * Math.sin(y * 0.08);
+	}
+
 	private void drawBeach(Graphics2D g) {
 		int shore = model.getShoreX();
-		int[] edge = { shore + 160, shore + 122, shore + 139, shore + 80, shore + 42, shore, shore - 25 };
-		int[] depths = { 284, 308, 329, 355, 381, 414, H };
-		int[] xs = new int[edge.length + 2];
-		int[] ys = new int[edge.length + 2];
-		for (int i = 0; i < edge.length; i++) {
-			xs[i] = edge[i];
-			ys[i] = depths[i];
+		int t = model.getTicks();
+		int n = (H - HORIZON) / 6 + 1;
+		int[] ys = new int[n];
+		for (int i = 0; i < n; i++) {
+			ys[i] = Math.min(H, HORIZON + i * 6);
 		}
-		xs[edge.length] = W;
-		ys[edge.length] = H;
-		xs[edge.length + 1] = W;
-		ys[edge.length + 1] = 284;
-		g.setColor(new Color(0xFFEFC7));
-		g.fillPolygon(xs, ys, xs.length);
-		for (int i = 0; i < edge.length; i++) {
-			xs[i] += 18;
+		// agua rasa (turquesa clara) antes da areia
+		fillBand(g, shore, ys, -34, 0, new Color(0x9A8FE8E2, true));
+		// areia molhada e areia seca com textura
+		fillBand(g, shore, ys, 0, 400, new Color(0xD3AE72));
+		Graphics2D dry = (Graphics2D) g.create();
+		dry.setPaint(new TexturePaint(Assets.SAND, new Rectangle(0, 0, 96, 96)));
+		fillBand(dry, shore, ys, 16, 400, null);
+		dry.setPaint(new GradientPaint(0, HORIZON, new Color(0x50FFF6DC, true), 0, H, new Color(0x00FFF6DC, true)));
+		fillBand(dry, shore, ys, 16, 400, null);
+		dry.dispose();
+		// espuma que vai e volta na beira
+		g.setColor(new Color(0xF6FFFD));
+		g.setStroke(new BasicStroke(3, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+		int[] fx = new int[n];
+		for (int i = 0; i < n; i++) {
+			fx[i] = (int) (shoreEdge(shore, ys[i]) + 3 + 5 * Math.sin(t * 0.06 + ys[i] * 0.03));
 		}
-		g.setPaint(new TexturePaint(Assets.SAND, new Rectangle(0, 0, 96, 96)));
-		g.fillPolygon(xs, ys, xs.length);
-		g.setColor(new Color(0xFAFEF1));
-		g.setStroke(new BasicStroke(3));
-		g.drawPolyline(edge, depths, edge.length);
+		g.drawPolyline(fx, ys, n);
 		g.setStroke(new BasicStroke(1));
+		for (int i = 0; i < n; i += 2) {
+			int bubble = (int) ((t * 0.7 + i * 5) % 14);
+			g.fillRect(fx[i] - 6 - bubble, ys[i] + 2, 3, 2);
+		}
+		// vegetacao no fundo da praia
+		int back = (int) shoreEdge(shore, HORIZON) + 40;
+		for (int x = back; x < W + 20; x += 26) {
+			int h = 8 + (x / 26 % 3) * 4;
+			g.setColor(new Color(0x3C8A44));
+			g.fillOval(x, HORIZON - h + 6, 34, h + 6);
+			g.setColor(new Color(0x6CC04A));
+			g.fillOval(x + 6, HORIZON - h + 6, 18, h / 2 + 3);
+		}
+		g.drawImage(Assets.PALM, back + 120, HORIZON - 44, 22, 52, null);
+		g.drawImage(Assets.PALM, back + 330, HORIZON - 38, 18, 44, null);
+		// conchas e estrela-do-mar espalhadas
+		int[][] shells = { { 210, 348 }, { 300, 420 }, { 470, 372 }, { 390, 436 }, { 560, 410 } };
+		for (int[] sh : shells) {
+			g.setColor(new Color(0xF7D2D8));
+			g.fillRect(shore + sh[0], sh[1], 5, 4);
+			g.setColor(new Color(0xFFFFFF));
+			g.fillRect(shore + sh[0] + 1, sh[1], 2, 1);
+		}
+		drawStarfish(g, shore + 250, 430);
+		// coqueiro com sombra, guarda-sol e toalha (iguais aos da cena final)
+		g.setColor(new Color(0x45A0752F, true));
+		g.fillOval(shore + 236, 402, 74, 12);
 		g.drawImage(Assets.PALM, shore + 244, 294, 54, 116, null);
-		g.drawImage(Assets.CRAB, shore + 360, 408, 35, 24, null);
+		drawUmbrella(g, shore + 420, 418);
+		g.drawImage(Assets.CRAB, (int) (shore + 360 + Math.sin(t * 0.05) * 22), 412, 35, 24, null);
+	}
+
+	/** Preenche a faixa entre a beira deslocada de "from" e de "to" pixels (to = 400 vai ate a borda). */
+	private void fillBand(Graphics2D g, int shore, int[] ys, int from, int to, Color color) {
+		int n = ys.length;
+		int[] xs = new int[n * 2];
+		int[] yy = new int[n * 2];
+		for (int i = 0; i < n; i++) {
+			double edge = shoreEdge(shore, ys[i]);
+			xs[i] = (int) (edge + from);
+			yy[i] = ys[i];
+			xs[n * 2 - 1 - i] = to >= 400 ? W + 4 : (int) (edge + to);
+			yy[n * 2 - 1 - i] = ys[i];
+		}
+		if (color != null) {
+			g.setColor(color);
+		}
+		g.fillPolygon(xs, yy, xs.length);
+	}
+
+	private void drawStarfish(Graphics2D g, int x, int y) {
+		g.setColor(new Color(0xF08A3C));
+		g.fillRect(x + 4, y, 4, 12);
+		g.fillRect(x, y + 4, 12, 4);
+		g.fillRect(x + 1, y + 9, 3, 3);
+		g.fillRect(x + 8, y + 9, 3, 3);
+		g.setColor(new Color(0xFFC07A));
+		g.fillRect(x + 5, y + 5, 2, 2);
+	}
+
+	/** Guarda-sol listrado de vermelho e branco com toalha azul, como na imagem da praia. */
+	private void drawUmbrella(Graphics2D g, int x, int base) {
+		g.setColor(new Color(0x3D7FB5));
+		g.fillRect(x - 34, base - 4, 66, 12);
+		g.setColor(new Color(0xA9D6F2));
+		for (int i = 0; i < 66; i += 8) {
+			g.fillRect(x - 34 + i, base - 4, 3, 12);
+		}
+		g.setColor(new Color(0x45A0752F, true));
+		g.fillOval(x - 46, base - 8, 92, 12);
+		g.setColor(new Color(0x6B6F75));
+		g.fillRect(x - 2, base - 78, 4, 80);
+		for (int i = 0; i < 6; i++) {
+			g.setColor(i % 2 == 0 ? new Color(0xE23B3B) : new Color(0xF7F7F2));
+			g.fillArc(x - 46, base - 104, 92, 56, 180 - i * 30, -30);
+		}
+		g.setColor(new Color(0x2B2F3A));
+		g.drawArc(x - 46, base - 104, 92, 56, 0, 180);
+		g.drawLine(x - 46, base - 76, x + 46, base - 76);
 	}
 
 	private void drawOcean(Graphics2D g, int x, boolean flipped) {
