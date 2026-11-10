@@ -42,6 +42,7 @@ public class GameModel {
 	private int nextObstacle;
 	private int spawned;
 	private int intro;
+	private int introTicks;
 	private int energy = MAX_ENERGY;
 	private int shield;
 	private int recovery;
@@ -75,10 +76,13 @@ public class GameModel {
 		switch (state) {
 		case TITLE:
 			intro = 0;
+			introTicks = 0;
+			resetScenery();
 			state = GameState.INTRO;
 			break;
 		case INTRO:
 			intro++;
+			introTicks = 0;
 			if (intro == INTRO_PAGES) {
 				start();
 			}
@@ -132,6 +136,11 @@ public class GameModel {
 	// ------------------------------------------------------------------
 
 	public void update() {
+		if (state == GameState.INTRO) {
+			introTicks++;
+			scroll = (scroll + 2.5) % (2 * WIDTH);
+			return;
+		}
 		if (state != GameState.PLAYING) {
 			return;
 		}
@@ -177,9 +186,6 @@ public class GameModel {
 		obstacles.clear();
 		items.clear();
 		surfer.reset();
-		obstacles.add(Obstacle.create(ObstacleType.ROCK, 572));
-		obstacles.add(Obstacle.create(ObstacleType.WAVE, 706));
-		obstacles.add(Obstacle.create(ObstacleType.GULL, 630));
 	}
 
 	private void spawn() {
@@ -340,6 +346,11 @@ public class GameModel {
 
 	public int getIntro() {
 		return intro;
+	}
+
+	/** Contador de quadros da cutscene atual (usado pela view para animar o prologo). */
+	public int getIntroTicks() {
+		return introTicks;
 	}
 
 	public int getTicks() {

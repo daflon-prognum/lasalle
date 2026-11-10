@@ -1,7 +1,11 @@
 package view;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
+import java.awt.GradientPaint;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.geom.Path2D;
 
 import model.Gull;
 import model.Item;
@@ -15,14 +19,14 @@ public final class SpriteRenderer {
 	private SpriteRenderer() {
 	}
 
-	public static void drawObstacle(Graphics2D g, Obstacle obstacle) {
+	public static void drawObstacle(Graphics2D g, Obstacle obstacle, int tick) {
 		int left = (int) obstacle.getX();
 		int width = obstacle.getWidth();
 		int height = obstacle.getHeight();
 		int floor = Surfer.FLOOR;
 		switch (obstacle.getType()) {
 		case GULL:
-			drawGull(g, left, floor - Gull.FLIGHT_HEIGHT);
+			drawGull(g, left, floor - Gull.FLIGHT_HEIGHT, tick, true);
 			return;
 		default:
 			g.setColor(new Color(0xD6F8F5));
@@ -48,7 +52,7 @@ public final class SpriteRenderer {
 			g.fillRect(left + 3, floor - 16, width - 6, 6);
 			break;
 		case WAVE:
-			drawWave(g, left, floor);
+			drawWave(g, left, floor, 1.0, tick);
 			break;
 		case LOG:
 			g.setColor(new Color(0x643C31));
@@ -79,34 +83,147 @@ public final class SpriteRenderer {
 		}
 	}
 
-	private static void drawGull(Graphics2D g, int left, int y) {
-		int[] wingsX = { 0, 10, 20, 29, 39, 47, 54, 46, 37, 29, 21, 12 };
-		int[] wingsY = { 0, 1, 7, 11, 4, 2, 5, 8, 11, 18, 13, 7 };
-		for (int i = 0; i < wingsX.length; i++) {
-			wingsX[i] += left;
-			wingsY[i] += y;
+	/**
+	 * Gaivota voando para a esquerda, com bater de asas e sombra na agua
+	 * (a sombra ajuda o jogador a perceber que ela voa baixo e que e preciso agachar).
+	 */
+	public static void drawGull(Graphics2D g, int left, int top, int tick, boolean shadow) {
+		Graphics2D b = (Graphics2D) g.create();
+		b.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		double flap = 0.3 + 0.7 * Math.sin(tick * 0.38); // asa desce pouco: nao encosta em quem agacha
+		int bob = (int) Math.round(Math.sin(tick * 0.19) * 2);
+		int y = top + bob;
+		if (shadow) {
+			b.setColor(new Color(0x10263C).darker());
+			b.setComposite(java.awt.AlphaComposite.getInstance(java.awt.AlphaComposite.SRC_OVER, 0.30f));
+			b.fillOval(left + 10, Surfer.FLOOR - 4, 40, 7);
+			b.setComposite(java.awt.AlphaComposite.SrcOver);
 		}
-		g.setColor(new Color(0xFFF7DE));
-		g.fillPolygon(wingsX, wingsY, wingsX.length);
-		g.setColor(new Color(0x17344E));
-		g.drawPolygon(wingsX, wingsY, wingsX.length);
-		g.setColor(new Color(0xFFCB68));
-		g.fillRect(left + 18, y + 13, 6, 3);
+		Color outline = new Color(0x17344E);
+		// asa de tras (cinza)
+		Path2D far = new Path2D.Double();
+		far.moveTo(left + 26, y + 11);
+		far.lineTo(left + 40, y + 11);
+		far.lineTo(left + 46, y + 11 - 13 * flap);
+		far.lineTo(left + 33, y + 10 - 11 * flap);
+		far.closePath();
+		b.setColor(new Color(0xA9B7C2));
+		b.fill(far);
+		// cauda
+		b.setColor(new Color(0xE9EEF1));
+		b.fillPolygon(new int[] { left + 44, left + 57, left + 55, left + 44 },
+				new int[] { y + 10, y + 7, y + 15, y + 15 }, 4);
+		// corpo e cabeca
+		b.setColor(new Color(0xFBFDFE));
+		b.fillOval(left + 12, y + 7, 36, 12);
+		b.fillOval(left + 5, y + 3, 14, 13);
+		b.setColor(new Color(0xC8D3DB));
+		b.fillOval(left + 20, y + 7, 26, 5);
+		b.setColor(outline);
+		b.setStroke(new BasicStroke(1.4f));
+		b.drawOval(left + 12, y + 7, 36, 12);
+		b.drawArc(left + 5, y + 3, 14, 13, 40, 240);
+		// bico e olho
+		b.setColor(new Color(0xF7A23B));
+		b.fillPolygon(new int[] { left - 3, left + 7, left + 7 }, new int[] { y + 10, y + 8, y + 12 }, 3);
+		b.setColor(new Color(0x10263C));
+		b.fillRect(left + 9, y + 7, 3, 3);
+		// asa da frente (branca com ponta escura)
+		Path2D near = new Path2D.Double();
+		near.moveTo(left + 22, y + 12);
+		near.lineTo(left + 38, y + 12);
+		near.lineTo(left + 44, y + 12 - 19 * flap);
+		near.lineTo(left + 28, y + 11 - 16 * flap);
+		near.closePath();
+		b.setColor(new Color(0xFFFFFF));
+		b.fill(near);
+		b.setColor(outline);
+		b.draw(near);
+		b.setColor(new Color(0x2B3A47));
+		b.fillOval((int) (left + 39), (int) (y + 9 - 18 * flap), 7, 6);
+		b.dispose();
 	}
 
-	public static void drawWave(Graphics2D g, int x, int y) {
-		Graphics2D wave = (Graphics2D) g.create();
-		wave.translate(x, y);
-		wave.setColor(new Color(0x087896));
-		wave.fillPolygon(new int[] { 0, 12, 22, 31, 45, 60, 65, 50, 47, 54, 72 },
-				new int[] { 0, -9, -26, -34, -38, -33, -24, -28, -17, -7, 0 }, 11);
-		wave.setColor(new Color(0x31C6CD));
-		wave.fillPolygon(new int[] { 7, 22, 35, 45, 39, 44, 58 }, new int[] { 0, -11, -29, -29, -17, -5, 0 }, 7);
-		wave.setColor(new Color(0xEDFDF8));
-		wave.fillPolygon(new int[] { 22, 31, 45, 60, 65, 59, 48, 39, 30 },
-				new int[] { -26, -34, -38, -33, -24, -25, -31, -31, -27 }, 9);
-		wave.fillRect(4, 0, 64, 3);
-		wave.dispose();
+	/**
+	 * Onda quebrando para a esquerda (na direcao da surfista): costas escuras, face clara,
+	 * crista de espuma que se curva formando um tubo e respingos animados.
+	 * As coordenadas locais vao de x 0..72 e y -40..0; scale aumenta a onda (usado no prologo).
+	 */
+	public static void drawWave(Graphics2D g, int x, int y, double scale, int tick) {
+		Graphics2D w = (Graphics2D) g.create();
+		w.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		w.translate(x, y);
+		w.scale(scale, scale);
+		// corpo da onda: costas suaves a direita, crista projetada para a esquerda
+		Path2D body = new Path2D.Double();
+		body.moveTo(84, 2);
+		body.curveTo(72, -4, 62, -24, 48, -38);
+		body.curveTo(38, -46, 22, -46, 12, -40);
+		body.curveTo(4, -35, -2, -28, -3, -20);
+		body.curveTo(1, -24, 6, -27, 10, -26);
+		body.curveTo(18, -22, 22, -12, 24, 2);
+		body.closePath();
+		w.setPaint(new GradientPaint(0, -46, new Color(0x2CB7CB), 0, 2, new Color(0x0A5C7A)));
+		w.fill(body);
+		// tubo: a parte oca embaixo da crista, mais escura
+		Path2D tube = new Path2D.Double();
+		tube.moveTo(-3, -20);
+		tube.curveTo(1, -24, 6, -27, 10, -26);
+		tube.curveTo(18, -22, 22, -12, 24, 2);
+		tube.lineTo(6, 2);
+		tube.curveTo(8, -6, 6, -14, -3, -20);
+		tube.closePath();
+		w.setPaint(new GradientPaint(20, -24, new Color(0x0E6F8D), 4, 2, new Color(0x063F57)));
+		w.fill(tube);
+		// face iluminada (parede interna do tubo)
+		Path2D face = new Path2D.Double();
+		face.moveTo(12, -25);
+		face.curveTo(19, -20, 23, -10, 24, 2);
+		face.lineTo(28, 2);
+		face.curveTo(27, -12, 24, -24, 18, -31);
+		face.closePath();
+		w.setColor(new Color(0x5ED9E2));
+		w.fill(face);
+		// crista de espuma acompanhando o topo ate a ponta que cai
+		Path2D lip = new Path2D.Double();
+		lip.moveTo(58, -32);
+		lip.curveTo(44, -46, 24, -48, 12, -40);
+		lip.curveTo(4, -35, -2, -28, -3, -20);
+		w.setColor(new Color(0xF4FFFD));
+		w.setStroke(new BasicStroke(4.5f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+		w.draw(lip);
+		w.setColor(new Color(0xBFF3F5));
+		w.setStroke(new BasicStroke(1.6f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+		Path2D lip2 = new Path2D.Double();
+		lip2.moveTo(50, -36);
+		lip2.curveTo(40, -42, 26, -42, 16, -37);
+		w.draw(lip2);
+		// gotas caindo da ponta da crista
+		w.setColor(new Color(0xF4FFFD));
+		for (int i = 0; i < 3; i++) {
+			double fall = ((tick * 0.8 + i * 7) % 20) / 20.0;
+			w.fillRect((int) (-4 + i * 2), (int) (-18 + fall * 18), 2, 3);
+		}
+		// respingos animados sobre a crista
+		w.setColor(new Color(0xF4FFFD));
+		for (int i = 0; i < 6; i++) {
+			double phase = ((tick * 0.9 + i * 11) % 22) / 22.0;
+			double px = 8 + i * 8 - phase * 10;
+			double py = -38 - phase * 9 + (i % 2) * 3;
+			int size = phase < 0.6 ? 3 : 2;
+			w.fillRect((int) px, (int) py, size, size);
+		}
+		// espuma na base (agua branca onde a crista quebra)
+		w.setStroke(new BasicStroke(1));
+		w.fillRoundRect(-8, -1, 96, 4, 4, 4);
+		w.fillOval(-10, -6, 22, 9);
+		w.fillOval(4, -4, 16, 6);
+		for (int i = 0; i < 7; i++) {
+			int bx = (int) ((i * 13 + tick * 0.7) % 92) - 6;
+			int bh = 2 + (i % 3);
+			w.fillRect(bx, -bh, 3 + (i % 2), bh);
+		}
+		w.dispose();
 	}
 
 	public static void drawItem(Graphics2D g, Item item) {

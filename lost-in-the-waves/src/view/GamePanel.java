@@ -32,6 +32,13 @@ public class GamePanel extends JPanel {
 	private static final Color FOAM = new Color(0xE5FAF8);
 	private static final Color GOLD = new Color(0xFFCB68);
 
+	private static final BufferedImage PERSON = Assets.SURFER.getSubimage(0, 0, Assets.SURFER.getWidth(),
+			Assets.SURFER.getHeight() * 85 / 100);
+	private static final BufferedImage SURF_BOARD = Assets.SURFER.getSubimage(0, Assets.SURFER.getHeight() * 85 / 100,
+			Assets.SURFER.getWidth(), Assets.SURFER.getHeight() - Assets.SURFER.getHeight() * 85 / 100);
+	private static final int PERSON_H = Surfer.HEIGHT * 85 / 100;
+	private static final int BOARD_H = Surfer.HEIGHT - PERSON_H;
+
 	private transient GameModel model;
 
 	public GamePanel() {
@@ -87,16 +94,17 @@ public class GamePanel extends JPanel {
 		if (model.isBeachVisible()) {
 			drawBeach(g);
 		}
+		if (model.getState() == GameState.INTRO) {
+			drawCutscene(g);
+			return;
+		}
 		for (Obstacle obstacle : model.getObstacles()) {
-			SpriteRenderer.drawObstacle(g, obstacle);
+			SpriteRenderer.drawObstacle(g, obstacle, model.getTicks());
 		}
 		for (Item item : model.getItems()) {
 			SpriteRenderer.drawItem(g, item);
 		}
-		if (model.getState() == GameState.INTRO && model.getIntro() == 1) {
-			SpriteRenderer.drawWave(g, 107, Surfer.FLOOR);
-			g.drawImage(Assets.BOARD, 185, 400, 64, 15, null);
-		} else if (model.isSurferVisible()) {
+		if (model.isSurferVisible()) {
 			drawSurfer(g);
 		}
 		if (model.hasShield() && model.getState() == GameState.PLAYING) {
@@ -112,8 +120,7 @@ public class GamePanel extends JPanel {
 					"Uma onda enorme a derruba da prancha.",
 					"Ela recupera a prancha. A praia sumiu no horizonte." };
 			int page = model.getIntro();
-			drawCard(g, "PRÓLOGO  /  " + (page + 1) + "/" + GameModel.INTRO_PAGES, titles[page], lines[page],
-					"ENTER  /  CONTINUAR");
+			drawCaption(g, "PRÓLOGO  " + (page + 1) + "/" + GameModel.INTRO_PAGES, titles[page], lines[page]);
 			break;
 		case ROUTE:
 			drawCard(g, model.getStage().getName(), "Ainda há caminho",
@@ -135,16 +142,194 @@ public class GamePanel extends JPanel {
 
 	private void drawSurfer(Graphics2D g) {
 		Surfer surfer = model.getSurfer();
-		BufferedImage sprite = Assets.SURFER;
 		int x = (int) surfer.getX();
 		int y = (int) surfer.getY();
 		if (surfer.isCrouching()) {
-			int board = sprite.getHeight() * 85 / 100;
-			g.drawImage(sprite, x + 8, y - 32, x + Surfer.WIDTH - 8, y - 10, 0, 0, sprite.getWidth(), board, null);
-			g.drawImage(sprite, x, y - 10, x + Surfer.WIDTH, y, 0, board, sprite.getWidth(), sprite.getHeight(), null);
+			drawCrouch(g, x, y);
 		} else {
-			g.drawImage(sprite, x, y - Surfer.HEIGHT, Surfer.WIDTH, Surfer.HEIGHT, null);
+			g.drawImage(Assets.SURFER, x, y - Surfer.HEIGHT, Surfer.WIDTH, Surfer.HEIGHT, null);
 		}
+	}
+
+	/**
+	 * Agachada: prancha igual, pernas dobradas (mais baixas e abertas) e tronco um pouco menor,
+	 * em vez de achatar a imagem inteira.
+	 */
+	private void drawCrouch(Graphics2D g, int x, int y) {
+		BufferedImage sprite = Assets.SURFER;
+		int sw = sprite.getWidth();
+		int sh = sprite.getHeight();
+		int hip = sh * 55 / 100;
+		int knees = sh * 85 / 100;
+		g.drawImage(sprite, x, y - BOARD_H, x + Surfer.WIDTH, y, 0, knees, sw, sh, null);
+		g.drawImage(sprite, x - 5, y - BOARD_H - 9, x + Surfer.WIDTH + 5, y - BOARD_H + 1, 0, hip, sw, knees, null);
+		int torsoW = Surfer.WIDTH * 80 / 100;
+		int torsoH = 33;
+		int tx = x + (Surfer.WIDTH - torsoW) / 2;
+		g.drawImage(sprite, tx, y - BOARD_H - 8 - torsoH, tx + torsoW, y - BOARD_H - 8, 0, 0, sw, hip, null);
+	}
+
+	// ------------------------------------------------------------------
+	// Prologo animado (cutscenes)
+	// ------------------------------------------------------------------
+
+	private void drawCutscene(Graphics2D g) {
+		int t = model.getIntroTicks();
+		switch (model.getIntro()) {
+		case 0:
+			drawRiding(g, 250 + (int) (Math.sin(t * 0.03) * 12), 0, t);
+			break;
+		case 1:
+			drawFall(g, t);
+			break;
+		default:
+			drawRecover(g, t);
+		}
+	}
+
+	/** Surfista de pe na prancha, balancando com o mar. */
+	private void drawRiding(Graphics2D g, int x, double angle, int t) {
+		int feet = Surfer.FLOOR - (int) Math.round(Math.sin(t * 0.12) * 2);
+		drawSpray(g, x + Surfer.WIDTH - 6, feet, t);
+		Graphics2D r = (Graphics2D) g.create();
+		r.rotate(Math.toRadians(angle), x + Surfer.WIDTH / 2.0, feet);
+		r.drawImage(Assets.SURFER, x, feet - Surfer.HEIGHT, Surfer.WIDTH, Surfer.HEIGHT, null);
+		r.dispose();
+	}
+
+	/** A queda: a onda gigante chega, a surfista gira no ar, cai no mar e a prancha voa longe. */
+	private void drawFall(Graphics2D g, int t) {
+		final int hit = 88;
+		final int flight = 56;
+		final int land = hit + flight;
+		Graphics2D s = (Graphics2D) g.create();
+		if (t > hit - 6 && t < hit + 22) {
+			s.translate(Math.sin(t * 2.3) * 4, Math.cos(t * 3.1) * 3);
+		}
+		int waveX = (int) (900 - t * 6.5);
+		if (t < hit) {
+			double wobble = Math.sin(t * 0.45) * Math.min(1, t / 70.0) * 7;
+			drawRiding(s, 250, wobble, t);
+		} else if (t < land) {
+			double p = (t - hit) / (double) flight;
+			double arc = Math.sin(Math.PI * p);
+			drawBoard(s, 290 + 200 * p, Surfer.FLOOR - 6 - 130 * arc, 600 * p);
+			double cx = 250 - 150 * p + Surfer.WIDTH / 2.0;
+			double cy = Surfer.FLOOR - PERSON_H / 2.0 + 18 * p - 120 * arc;
+			Graphics2D r = (Graphics2D) s.create();
+			r.rotate(Math.toRadians(-540 * p - 30 * arc), cx, cy); // gira 1,5 volta e entra de cabeca na agua
+			r.drawImage(PERSON, (int) (cx - Surfer.WIDTH / 2.0), (int) (cy - PERSON_H / 2.0), Surfer.WIDTH, PERSON_H,
+					null);
+			r.dispose();
+		} else {
+			double bob = Math.sin(t * 0.1) * 3;
+			drawBoard(s, 490, Surfer.FLOOR - 4 + bob, Math.sin(t * 0.07) * 8);
+			double rise = Math.max(0, Math.min(1, (t - land - 16) / 40.0));
+			drawSwimmer(s, 100, rise, t);
+			drawSplash(s, 134, t - land);
+		}
+		SpriteRenderer.drawWave(s, waveX, Surfer.FLOOR + 4, 3.0, t);
+		s.dispose();
+	}
+
+	/** Depois da queda: ela nada ate a prancha e sobe de novo. */
+	private void drawRecover(Graphics2D g, int t) {
+		if (t < 60) {
+			double q = t / 60.0;
+			drawBoard(g, 262, Surfer.FLOOR - 4 + Math.sin(t * 0.1) * 3, 0);
+			drawSwimmer(g, (int) (150 + 80 * q), 1, t);
+		} else if (t < 95) {
+			double q = (t - 60) / 35.0;
+			Graphics2D c = (Graphics2D) g.create();
+			c.clipRect(0, 0, getWidth(), Surfer.FLOOR - BOARD_H);
+			int feet = (int) (Surfer.FLOOR - BOARD_H + 34 * (1 - q));
+			c.drawImage(PERSON, 250, feet - PERSON_H, Surfer.WIDTH, PERSON_H, null);
+			c.dispose();
+			drawBoard(g, 250, Surfer.FLOOR - BOARD_H, 0);
+			drawRipple(g, 284, t);
+		} else {
+			drawRiding(g, 250, 0, t);
+		}
+	}
+
+	/** Prancha (recortada do proprio sprite) desenhada a partir do canto superior esquerdo, com rotacao. */
+	private void drawBoard(Graphics2D g, double x, double y, double angle) {
+		Graphics2D r = (Graphics2D) g.create();
+		r.rotate(Math.toRadians(angle), x + Surfer.WIDTH / 2.0, y + BOARD_H / 2.0);
+		r.drawImage(SURF_BOARD, (int) x, (int) y, Surfer.WIDTH, BOARD_H, null);
+		r.dispose();
+	}
+
+	/** Cabeca e ombros para fora da agua; rise vai de 0 (submersa) a 1. */
+	private void drawSwimmer(Graphics2D g, int x, double rise, int t) {
+		int water = Surfer.FLOOR - 6;
+		int bob = (int) Math.round(Math.sin(t * 0.15) * 2);
+		int shown = (int) (30 * rise);
+		Graphics2D c = (Graphics2D) g.create();
+		c.clipRect(0, 0, getWidth(), water);
+		c.drawImage(PERSON, x, water - shown + bob, Surfer.WIDTH, PERSON_H, null);
+		c.dispose();
+		if (rise > 0) {
+			drawRipple(g, x + Surfer.WIDTH / 2, t);
+		}
+	}
+
+	private void drawRipple(Graphics2D g, int cx, int t) {
+		int water = Surfer.FLOOR - 6;
+		int grow = (int) (Math.sin(t * 0.15) * 4);
+		g.setColor(new Color(0xCCF6FBF9, true));
+		g.setStroke(new BasicStroke(2));
+		g.drawOval(cx - 40 - grow, water - 4, 80 + 2 * grow, 9);
+		g.setStroke(new BasicStroke(1));
+	}
+
+	/** Respingos de agua no momento em que ela cai no mar. */
+	private void drawSplash(Graphics2D g, int x, int s) {
+		if (s < 0 || s > 46) {
+			return;
+		}
+		g.setColor(new Color(0xF4FFFD));
+		for (int k = 0; k < 16; k++) {
+			double vx = (k - 7.5) * 0.75;
+			double vy = -7 - (k % 4) * 1.4;
+			int px = (int) (x + vx * s);
+			int py = (int) (Surfer.FLOOR - 8 + vy * s + 0.38 * s * s);
+			if (py <= Surfer.FLOOR) {
+				int size = s < 20 ? 5 : 3;
+				g.fillRect(px, py, size, size);
+			}
+		}
+		int ring = Math.min(s * 4, 90);
+		g.setColor(new Color(0xB4F6FBF9, true));
+		g.fillOval(x - ring, Surfer.FLOOR - 10, ring * 2, 12);
+	}
+
+	/** Esteira de espuma atras da prancha. */
+	private void drawSpray(Graphics2D g, int x, int feet, int t) {
+		g.setColor(new Color(0xE6F4FFFD, true));
+		for (int i = 0; i < 6; i++) {
+			int dx = (i * 9 + t * 2) % 54;
+			int dy = (int) (Math.sin((t + i * 7) * 0.4) * 3);
+			g.fillRect(x + dx, feet - 6 + dy, 4 - i / 2, 3);
+		}
+	}
+
+	/** Legenda compacta no topo para as cutscenes, deixando a animacao visivel. */
+	private void drawCaption(Graphics2D g, String label, String title, String body) {
+		int left = 110;
+		int width = W - 2 * left;
+		g.setColor(new Color(0x85203E57, true));
+		g.fillRect(left + 6, 26, width, 128);
+		g.setColor(INK);
+		g.fillRect(left, 20, width, 128);
+		g.setColor(GOLD);
+		g.fillRect(left, 20, width, 4);
+		g.setFont(new Font(Font.MONOSPACED, Font.BOLD, 13));
+		g.drawString(label, left + 20, 46);
+		String hint = "ENTER ›";
+		g.drawString(hint, left + width - 20 - g.getFontMetrics().stringWidth(hint), 46);
+		centered(g, title, 92, 34, FOAM);
+		centered(g, body, 126, 15, FOAM);
 	}
 
 	private void drawSurferOnSand(Graphics2D g) {

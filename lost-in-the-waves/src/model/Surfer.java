@@ -10,6 +10,7 @@ public class Surfer extends GameObject {
 	public static final int WIDTH = 68;
 	public static final int HEIGHT = 72;
 	public static final int FLOOR = 414;
+	public static final int CROUCH_HEIGHT = 42;
 	private static final int MIN_X = 35;
 	private static final int MAX_X = 310;
 	private static final double STEP = 4.4;
@@ -63,7 +64,7 @@ public class Surfer extends GameObject {
 
 	@Override
 	public Rectangle2D getBounds() {
-		int h = crouching ? 25 : 62;
+		int h = crouching ? CROUCH_HEIGHT : 62;
 		return new Rectangle2D.Double(x + 8, y - h, WIDTH - 16, h - 3);
 	}
 
