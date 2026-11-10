@@ -71,9 +71,9 @@ public class GamePanel extends JPanel {
 			break;
 		case WON:
 			drawBeachBackground(g);
-			drawSurferOnSand(g);
-			drawCard(g, "EPÍLOGO  /  " + model.getPoints() + " PONTOS", "Enfim, a areia!",
-					"A surfista desembarca. Sua jornada chegou ao fim.", "ENTER  /  VOLTAR AO MENU");
+			drawEnding(g, model.getEndTicks());
+			drawCaption(g, "EPÍLOGO  /  " + model.getPoints() + " PONTOS", "Enfim, a areia!",
+					"A surfista desembarca. Sua jornada chegou ao fim.");
 			break;
 		default:
 			drawSea(g);
@@ -332,12 +332,115 @@ public class GamePanel extends JPanel {
 		centered(g, body, 126, 15, FOAM);
 	}
 
-	private void drawSurferOnSand(Graphics2D g) {
-		BufferedImage sprite = Assets.SURFER;
-		int x = 250;
-		int feet = sprite.getHeight() * 85 / 100;
-		g.drawImage(sprite, x, 352, x + 68, 413, 0, 0, sprite.getWidth(), feet, null);
-		g.drawImage(Assets.BOARD, x + 58, 400, 64, 15, null);
+	// ------------------------------------------------------------------
+	// Epilogo animado: chegada a praia
+	// ------------------------------------------------------------------
+
+	private static final int SHORE_WATER = 352;
+	private static final int SAND_FEET = 404;
+
+	/**
+	 * Ela surfa ate a beira, pula da prancha para a areia, caminha ate a toalha e comemora;
+	 * a prancha e trazida pelas ondas ate a areia e um caranguejo vem ver.
+	 */
+	private void drawEnding(Graphics2D g, int t) {
+		final int arrive = 100;
+		final int hop = 24;
+		final int walk = 80;
+		drawCrab(g, t);
+		double wash = Math.max(0, Math.min(1, (t - arrive - hop) / 60.0));
+		if (t < arrive) {
+			// vem do horizonte em direcao a praia, crescendo conforme se aproxima
+			double p = t / (double) arrive;
+			double scale = 0.3 + 0.7 * p * p;
+			int w = (int) (Surfer.WIDTH * scale);
+			int h = (int) (Surfer.HEIGHT * scale);
+			int cx = (int) (450 - 126 * p);
+			int feet = (int) (262 + (SHORE_WATER - 262) * p + Math.sin(t * 0.15) * 2 * scale);
+			g.setColor(new Color(0xD9F6FBF9, true));
+			g.fillOval(cx - w / 2 - (int) (10 * scale), feet - (int) (5 * scale), w + (int) (20 * scale), (int) (9 * scale) + 2);
+			for (int k = 0; k < 5; k++) {
+				int dy = (int) ((k * 7 + t * 1.5) % 30 * scale);
+				g.fillRect(cx - (int) ((k - 2) * 9 * scale), feet - 2 + dy / 3, Math.max(2, (int) (4 * scale)), 2);
+			}
+			g.drawImage(Assets.SURFER, cx - w / 2, feet - h, w, h, null);
+			return;
+		}
+		double boardX = 290 + 14 * wash;
+		double boardFeet = SHORE_WATER + (SAND_FEET - 6 - SHORE_WATER) * wash + Math.sin(t * 0.1) * 2 * (1 - wash);
+		drawBoard(g, boardX, boardFeet - BOARD_H, -8 * wash);
+		if (wash < 1) {
+			drawRipple(g, (int) boardX + Surfer.WIDTH / 2, t);
+		}
+		double x;
+		double feet;
+		if (t < arrive + hop) {
+			double p = (t - arrive) / (double) hop;
+			x = 290 + 60 * p;
+			feet = SHORE_WATER + (SAND_FEET - SHORE_WATER) * p - 44 * Math.sin(Math.PI * p);
+			if (p > 0.85) {
+				drawSandPuff(g, (int) x + Surfer.WIDTH / 2, t - arrive - hop + 4);
+			}
+		} else if (t < arrive + hop + walk) {
+			double p = (t - arrive - hop) / (double) walk;
+			x = 350 + 120 * p;
+			feet = SAND_FEET - Math.abs(Math.sin(t * 0.3)) * 4;
+			drawSandPuff(g, 350 + Surfer.WIDTH / 2, t - arrive - hop + 4);
+		} else {
+			int c = t - arrive - hop - walk;
+			int k = c % 46;
+			boolean jumping = c < 46 * 4 && k < 22;
+			x = 470;
+			feet = SAND_FEET - (jumping ? Math.sin(Math.PI * k / 22.0) * 26 : 0);
+			if (c < 46 * 4 + 30) {
+				drawConfetti(g, 470 + Surfer.WIDTH / 2, c);
+			}
+		}
+		if (t > arrive + hop * 2 / 3) {
+			drawShadow(g, (int) x, SAND_FEET + 2);
+		}
+		g.drawImage(PERSON, (int) x, (int) feet - PERSON_H, Surfer.WIDTH, PERSON_H, null);
+	}
+
+	private void drawShadow(Graphics2D g, int x, int y) {
+		g.setColor(new Color(0x40203E57, true));
+		g.fillOval(x + 12, y - 4, Surfer.WIDTH - 24, 8);
+	}
+
+	/** Poeirinha de areia quando ela pousa. */
+	private void drawSandPuff(Graphics2D g, int cx, int s) {
+		if (s < 0 || s > 26) {
+			return;
+		}
+		g.setColor(new Color(0xC8E9CF96, true));
+		for (int k = 0; k < 8; k++) {
+			double vx = (k - 3.5) * 1.1;
+			int px = (int) (cx + vx * s);
+			int py = (int) (SAND_FEET - 3 - 2.6 * s + 0.12 * s * s);
+			if (py <= SAND_FEET) {
+				g.fillRect(px, py, 4, 4);
+			}
+		}
+	}
+
+	/** Confete colorido de comemoracao. */
+	private void drawConfetti(Graphics2D g, int cx, int c) {
+		Color[] colors = { GOLD, new Color(0xE84855), new Color(0x31C6CD), new Color(0xFFFFFF) };
+		for (int k = 0; k < 18; k++) {
+			int life = (c + k * 11) % 70;
+			double angle = k * 2.399;
+			int px = (int) (cx + Math.cos(angle) * (20 + life * 1.6));
+			int py = (int) (SAND_FEET - 90 - Math.abs(Math.sin(angle)) * 30 + life * 1.1);
+			g.setColor(colors[k % colors.length]);
+			g.fillRect(px, py, 5, (life / 6) % 2 == 0 ? 5 : 2);
+		}
+	}
+
+	/** Caranguejo atravessando a areia, de lado. */
+	private void drawCrab(Graphics2D g, int t) {
+		int x = (int) Math.max(640, 830 - Math.max(0, t - 120) * 1.4);
+		int wobble = (t / 6) % 2 == 0 ? 0 : 2;
+		g.drawImage(Assets.CRAB, x, 412 - wobble, 35, 24, null);
 	}
 
 	private void drawShield(Graphics2D g) {

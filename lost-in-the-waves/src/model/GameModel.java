@@ -43,6 +43,7 @@ public class GameModel {
 	private int spawned;
 	private int intro;
 	private int introTicks;
+	private int endTicks;
 	private int energy = MAX_ENERGY;
 	private int shield;
 	private int recovery;
@@ -139,6 +140,10 @@ public class GameModel {
 		if (state == GameState.INTRO) {
 			introTicks++;
 			scroll = (scroll + 2.5) % (2 * WIDTH);
+			return;
+		}
+		if (state == GameState.WON) {
+			endTicks++;
 			return;
 		}
 		if (state != GameState.PLAYING) {
@@ -258,6 +263,7 @@ public class GameModel {
 			score.saveRecord();
 		} else if (getDistance() >= GOAL) {
 			state = level == STAGES.length ? GameState.WON : GameState.ROUTE;
+			endTicks = 0;
 			score.saveRecord();
 			surfer.land();
 		}
@@ -351,6 +357,11 @@ public class GameModel {
 	/** Contador de quadros da cutscene atual (usado pela view para animar o prologo). */
 	public int getIntroTicks() {
 		return introTicks;
+	}
+
+	/** Contador de quadros da cena final (chegada a praia). */
+	public int getEndTicks() {
+		return endTicks;
 	}
 
 	public int getTicks() {

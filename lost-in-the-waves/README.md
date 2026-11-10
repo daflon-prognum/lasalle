@@ -43,7 +43,8 @@ O menu **Ajuda** mostra os controles e os créditos.
   Cada fase é mais rápida que a anterior e a praia aparece no fim da última.
 - Colidir com um obstáculo tira 25 de energia. Com energia 0 é **game over**; ao tentar
   de novo, a fase recomeça com energia cheia e a pontuação do início da fase.
-- Chegar à praia na última fase é a **vitória** (cutscene final).
+- Chegar à praia na última fase é a **vitória**: na cena final animada ela surfa do horizonte
+  até a beira, pula da prancha para a areia, caminha até a toalha e comemora.
 - Pontuação: distância percorrida, desvios (com bônus de combo), moedas (100) e bola de praia (250).
 - Itens: **coco** (+25 energia), **água** (+15 energia), **moeda**, **bola de praia** e
   **escudo** (absorve um impacto ou expira após ~6 s).
