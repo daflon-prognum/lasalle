@@ -2,7 +2,6 @@ package view;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.GradientPaint;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.geom.Path2D;
@@ -68,7 +67,10 @@ public final class SpriteRenderer {
 			g.drawArc(left + 4, floor - 15, width - 8, 16, 35, 280);
 			g.drawArc(left + 16, floor - 11, width - 32, 8, 215, 280);
 			break;
-		default: // SHARK e WHALE
+		case SHARK:
+			drawShark(g, left, floor, tick);
+			break;
+		default: // WHALE
 			g.setColor(new Color(0x254364));
 			g.fillOval(left, floor - 15, width, 18);
 			g.fillPolygon(new int[] { left + 15, left + 37, left + 50 },
@@ -144,86 +146,140 @@ public final class SpriteRenderer {
 		b.dispose();
 	}
 
+	// ------------------------------------------------------------------
+	// Sprites em pixel art (cada letra e um "pixel" de 3x3)
+	// ------------------------------------------------------------------
+
+	private static final int PX = 3;
+
+	/** Tubarao nadando para a esquerda, com barbatana, olho, dentes e barriga clara. */
+	private static final String[] SHARK = {
+			"............D.............",
+			"...........DD.............",
+			"..........DGD..........D..",
+			".........DGGD.........DD..",
+			"........DGGGD........DGD..",
+			"....DDDDGGGGGDDDDDDDDGGD..",
+			"..DDGGGGGGGGGGGGGGGGGGGD..",
+			".DGGEGGDGDGGGGGGGGGGGGGGD.",
+			"DGGGGGGDGDGGGGGGGGGGGGDGD.",
+			"RTRTRBBBBBBBBBBBBBBBBGD.DD",
+			".RBBBBBBBBBBBBBBBBBBBD....", };
+
+	/** Onda quebrando para a esquerda: crista de espuma, tubo escuro, face clara e espuma na base. */
+	private static final String[] WAVE = {
+			"........WWWWWW..............",
+			"......WWLLLLLLWW............",
+			"....WWLLMMMMMMLLW...........",
+			"...WLLMMMMMMMMMMLW..........",
+			"..WLMMDDDDDDMMMMMLW.........",
+			"..WMDKKKKKKKDMMMMMLW........",
+			"..WDKKKKKKKKKDMMMMMLW.......",
+			"..W..KKKKKKKKDMMMMMMLW......",
+			"......KKKKKKKDLMMMMMMLW.....",
+			".......KKKKKKDLMMMMMMMLLW...",
+			"........KKKKKDLLMMMMMMMMLLW.",
+			"........KKKKDDLLMMMMMMMMMMLL",
+			".........KKKDLLLMMMMMMMMMMMM",
+			"......WWKKKDLLLMMMMMMMMMMMMM",
+			"...WWWWWWWWWWLLWWMMMMMMWWMMM",
+			"WWWWWWWWWWWWWWWWWWWWWWWWWWWW", };
+
+	private static Color pixelColor(char c) {
+		switch (c) {
+		case 'D':
+			return new Color(0x22374B);
+		case 'G':
+			return new Color(0x587389);
+		case 'B':
+			return new Color(0xE4ECF0);
+		case 'E':
+			return new Color(0x0B1520);
+		case 'R':
+			return new Color(0x8E2F3F);
+		case 'T':
+		case 'W':
+			return new Color(0xF4FFFD);
+		case 'L':
+			return new Color(0x8BE8EE);
+		case 'M':
+			return new Color(0x2AA8C4);
+		case 'K':
+			return new Color(0x0B4664);
+		default:
+			return null;
+		}
+	}
+
+	private static void drawPixels(Graphics2D g, String[] rows, int x, int y, int px) {
+		for (int r = 0; r < rows.length; r++) {
+			for (int c = 0; c < rows[r].length(); c++) {
+				Color color = pixelColor(rows[r].charAt(c));
+				if (color != null) {
+					g.setColor(color);
+					g.fillRect(x + c * px, y + r * px, px, px);
+				}
+			}
+		}
+	}
+
+	/** Tubarao meio submerso avancando rapido, com marola na frente do focinho. */
+	public static void drawShark(Graphics2D g, int left, int floor, int tick) {
+		int bob = (tick / 10) % 2;
+		int top = floor - 31 + bob;
+		drawPixels(g, SHARK, left - 6, top, PX);
+		// espuma na linha d'agua
+		g.setColor(new Color(0xF4FFFD));
+		g.fillRect(left - 4, floor - 1, 78, 2);
+		g.fillRect(left + 4, floor + 1, 60, 2);
+		// marola e respingos no focinho (ele vem mais rapido que o mar)
+		for (int i = 0; i < 4; i++) {
+			int phase = (tick + i * 5) % 20;
+			g.fillRect(left - 10 - phase, floor - 8 - (i % 2) * 3 + phase / 4, 3, 3);
+		}
+		g.fillRect(left - 12, floor - 6, 8, 3);
+		// esteira atras da cauda
+		for (int i = 0; i < 3; i++) {
+			int dx = (i * 9 + tick * 2) % 27;
+			g.fillRect(left + 76 + dx, floor - 4, 5 - i, 2);
+		}
+	}
+
 	/**
-	 * Onda quebrando para a esquerda (na direcao da surfista): costas escuras, face clara,
-	 * crista de espuma que se curva formando um tubo e respingos animados.
-	 * As coordenadas locais vao de x 0..72 e y -40..0; scale aumenta a onda (usado no prologo).
+	 * Onda quebrando para a esquerda (na direcao da surfista), em pixel art.
+	 * A espuma da crista brilha, gotas caem da ponta e a espuma da base corre.
+	 * scale aumenta o tamanho dos pixels (usado no prologo).
 	 */
 	public static void drawWave(Graphics2D g, int x, int y, double scale, int tick) {
-		Graphics2D w = (Graphics2D) g.create();
-		w.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-		w.translate(x, y);
-		w.scale(scale, scale);
-		// corpo da onda: costas suaves a direita, crista projetada para a esquerda
-		Path2D body = new Path2D.Double();
-		body.moveTo(84, 2);
-		body.curveTo(72, -4, 62, -24, 48, -38);
-		body.curveTo(38, -46, 22, -46, 12, -40);
-		body.curveTo(4, -35, -2, -28, -3, -20);
-		body.curveTo(1, -24, 6, -27, 10, -26);
-		body.curveTo(18, -22, 22, -12, 24, 2);
-		body.closePath();
-		w.setPaint(new GradientPaint(0, -46, new Color(0x2CB7CB), 0, 2, new Color(0x0A5C7A)));
-		w.fill(body);
-		// tubo: a parte oca embaixo da crista, mais escura
-		Path2D tube = new Path2D.Double();
-		tube.moveTo(-3, -20);
-		tube.curveTo(1, -24, 6, -27, 10, -26);
-		tube.curveTo(18, -22, 22, -12, 24, 2);
-		tube.lineTo(6, 2);
-		tube.curveTo(8, -6, 6, -14, -3, -20);
-		tube.closePath();
-		w.setPaint(new GradientPaint(20, -24, new Color(0x0E6F8D), 4, 2, new Color(0x063F57)));
-		w.fill(tube);
-		// face iluminada (parede interna do tubo)
-		Path2D face = new Path2D.Double();
-		face.moveTo(12, -25);
-		face.curveTo(19, -20, 23, -10, 24, 2);
-		face.lineTo(28, 2);
-		face.curveTo(27, -12, 24, -24, 18, -31);
-		face.closePath();
-		w.setColor(new Color(0x5ED9E2));
-		w.fill(face);
-		// crista de espuma acompanhando o topo ate a ponta que cai
-		Path2D lip = new Path2D.Double();
-		lip.moveTo(58, -32);
-		lip.curveTo(44, -46, 24, -48, 12, -40);
-		lip.curveTo(4, -35, -2, -28, -3, -20);
-		w.setColor(new Color(0xF4FFFD));
-		w.setStroke(new BasicStroke(4.5f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
-		w.draw(lip);
-		w.setColor(new Color(0xBFF3F5));
-		w.setStroke(new BasicStroke(1.6f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
-		Path2D lip2 = new Path2D.Double();
-		lip2.moveTo(50, -36);
-		lip2.curveTo(40, -42, 26, -42, 16, -37);
-		w.draw(lip2);
+		int px = Math.max(PX, (int) Math.round(PX * scale));
+		int rows = WAVE.length;
+		int top = y - (rows - 1) * px;
+		int left = x - 2 * px;
+		drawPixels(g, WAVE, left, top, px);
+		// brilho que percorre a crista
+		g.setColor(new Color(0xFFFFFF));
+		int shine = (tick / 4) % 10;
+		g.fillRect(left + (6 + shine) * px, top + px, px, px);
 		// gotas caindo da ponta da crista
-		w.setColor(new Color(0xF4FFFD));
+		g.setColor(new Color(0xF4FFFD));
 		for (int i = 0; i < 3; i++) {
-			double fall = ((tick * 0.8 + i * 7) % 20) / 20.0;
-			w.fillRect((int) (-4 + i * 2), (int) (-18 + fall * 18), 2, 3);
+			int fall = (tick + i * 9) % 27;
+			g.fillRect(left + (2 + i % 2) * px, top + (8 + fall / 3) * px, px, px);
 		}
-		// respingos animados sobre a crista
-		w.setColor(new Color(0xF4FFFD));
-		for (int i = 0; i < 6; i++) {
-			double phase = ((tick * 0.9 + i * 11) % 22) / 22.0;
-			double px = 8 + i * 8 - phase * 10;
-			double py = -38 - phase * 9 + (i % 2) * 3;
-			int size = phase < 0.6 ? 3 : 2;
-			w.fillRect((int) px, (int) py, size, size);
+		// respingos saltando da crista
+		for (int i = 0; i < 4; i++) {
+			int phase = (tick + i * 7) % 28;
+			int sx = left + (7 + i * 2) * px - phase * px / 6;
+			int sy = top - phase * px / 5 + (phase * phase) * px / 160;
+			if (sy < top + px) {
+				g.fillRect(sx, sy, px, px);
+			}
 		}
-		// espuma na base (agua branca onde a crista quebra)
-		w.setStroke(new BasicStroke(1));
-		w.fillRoundRect(-8, -1, 96, 4, 4, 4);
-		w.fillOval(-10, -6, 22, 9);
-		w.fillOval(4, -4, 16, 6);
-		for (int i = 0; i < 7; i++) {
-			int bx = (int) ((i * 13 + tick * 0.7) % 92) - 6;
-			int bh = 2 + (i % 3);
-			w.fillRect(bx, -bh, 3 + (i % 2), bh);
+		// espuma correndo na base
+		for (int i = 0; i < 5; i++) {
+			int bx = (i * 6 + tick / 3) % 30;
+			g.fillRect(left + (bx - 1) * px, y - px, px * 2, px);
 		}
-		w.dispose();
 	}
 
 	public static void drawItem(Graphics2D g, Item item) {

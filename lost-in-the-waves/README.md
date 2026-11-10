@@ -48,8 +48,8 @@ O menu **Ajuda** mostra os controles e os créditos.
 - Pontuação: distância percorrida, desvios (com bônus de combo), moedas (100) e bola de praia (250).
 - Itens: **coco** (+25 energia), **água** (+15 energia), **moeda**, **bola de praia** e
   **escudo** (absorve um impacto ou expira após ~6 s).
-- Obstáculos: rocha, boia, tronco, gaivota (voa baixo, com sombra na água: agache para
-  passar por baixo), tubarão (mais rápido), baleia, onda (quebrando, com espuma e
+- Obstáculos (desenhados em pixel art no SpriteRenderer): rocha, boia, tronco, gaivota (voa baixo, com sombra na água: agache para
+  passar por baixo), tubarão (mais rápido, com barbatana e marola), baleia, onda (quebrando, com espuma e
   respingos animados) e redemoinho (puxa a surfista para o centro).
 - Agachar dobra as pernas e abaixa o tronco sobre a prancha, reduzindo a altura da colisão.
 - Prólogo animado em 3 cenas: a surfista no mar, a onda gigante que a derruba (ela gira
