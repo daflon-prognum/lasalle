@@ -1,5 +1,13 @@
 # lasalle
 
+## Projeto G2 — SINISA 2025
+
+**Disciplina** — Linguagens de Programação<br>
+**Professor** — Alexandre Neves Louzada<br>
+**Autores** — Guilherme Daflon Goulart Costa e Marcella Guimaraes Rodrigues Da Silva
+
+[Atendimento por redes de água e esgoto no Brasil em 2024](projeto-saneamento-sinisa/README.md) · [Artigo publicado](https://daflon-prognum.github.io/lasalle/projeto-saneamento-sinisa/)
+
 ## Projeto G1 — 08/10/2026
 
 **Disciplina:** Linguagens de Programação  

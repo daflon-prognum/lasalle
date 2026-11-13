@@ -1,0 +1,109 @@
+{
+  "agua_municipal.xlsx": {
+    "indicadores": {
+      "agua_rural_pct": {
+        "marcadores": {
+          "Não calculado (condições não atendidas)": 18,
+          "Não calculado (divisão por zero)": 37
+        },
+        "validos": 5089,
+        "zeros": 2076
+      },
+      "agua_total_pct": {
+        "marcadores": {
+          "Não calculado (condições não atendidas)": 26
+        },
+        "validos": 5118,
+        "zeros": 33
+      },
+      "agua_urbana_pct": {
+        "marcadores": {
+          "Não calculado (condições não atendidas)": 49
+        },
+        "validos": 5095,
+        "zeros": 42
+      }
+    },
+    "linhas": 5144,
+    "sha256": "262f74f515b6225b7c9c122576159ab45576ae15628ae67612d7cee6c333623d"
+  },
+  "agua_uf.xlsx": {
+    "indicadores": {
+      "agua_rural_pct": {
+        "marcadores": {},
+        "validos": 33,
+        "zeros": 0
+      },
+      "agua_total_pct": {
+        "marcadores": {},
+        "validos": 33,
+        "zeros": 0
+      },
+      "agua_urbana_pct": {
+        "marcadores": {},
+        "validos": 33,
+        "zeros": 0
+      }
+    },
+    "linhas": 33,
+    "sha256": "ceff0314989c7776191f2670b3cae3d70fbbc43fe2a174eecb4484ac3b170078"
+  },
+  "cruzamento": {
+    "pares_totais_validos": 2710,
+    "presenca": {
+      "Ambos": 2744,
+      "Somente esgoto": 5,
+      "Somente água": 2400
+    },
+    "uniao": 5149
+  },
+  "esgoto_municipal.xlsx": {
+    "indicadores": {
+      "esgoto_rural_pct": {
+        "marcadores": {
+          "Não calculado (condições não atendidas)": 15,
+          "Não calculado (divisão por zero)": 36
+        },
+        "validos": 2698,
+        "zeros": 1710
+      },
+      "esgoto_total_pct": {
+        "marcadores": {
+          "Não calculado (condições não atendidas)": 21
+        },
+        "validos": 2728,
+        "zeros": 5
+      },
+      "esgoto_urbana_pct": {
+        "marcadores": {
+          "Não calculado (condições não atendidas)": 25
+        },
+        "validos": 2724,
+        "zeros": 18
+      }
+    },
+    "linhas": 2749,
+    "sha256": "8ff86088f3fccda8adddbf5e7df1fa5be8246dfad23f9b6fe3a52bdbd3445b7b"
+  },
+  "esgoto_uf.xlsx": {
+    "indicadores": {
+      "esgoto_rural_pct": {
+        "marcadores": {},
+        "validos": 33,
+        "zeros": 6
+      },
+      "esgoto_total_pct": {
+        "marcadores": {},
+        "validos": 33,
+        "zeros": 0
+      },
+      "esgoto_urbana_pct": {
+        "marcadores": {},
+        "validos": 33,
+        "zeros": 0
+      }
+    },
+    "linhas": 33,
+    "sha256": "3a1aa48299cae4ea503c9cd1000448e41e3d042d1605bb510696d6673f9ddb3a"
+  }
+}
